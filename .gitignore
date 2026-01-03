@@ -1,0 +1,30 @@
+# Flutter/Dart
+.dart_tool/
+build/
+/.packages
+.packages
+pubspec.lock
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# IntelliJ / Android Studio
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# iOS
+Pods/
+Runner.xcworkspace/
+DerivedData/
+
+# Android
+.gradle/
+/.gradle
+/local.properties
+
+# Misc
+*.log
+*.tmp
+*.swp
