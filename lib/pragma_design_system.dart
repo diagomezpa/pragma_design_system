@@ -1,5 +1,5 @@
 /// Pragma Design System
-/// 
+///
 /// A Flutter package that implements a Design System based on Atomic Design.
 /// This package provides reusable UI components following atomic design principles:
 /// atoms, molecules, organisms, templates, and pages.
@@ -20,8 +20,10 @@ export 'atoms/app_spacer.dart';
 // Export themes (when implemented)
 // export 'theme/app_theme.dart';
 
-// Export molecules (when implemented)
-// export 'molecules/molecules.dart';
+// Export molecules
+export 'molecules/form_field/app_form_field.dart';
+export 'molecules/app_section/app_section.dart';
+export 'molecules/list_item/app_list_item.dart';
 
 // Export organisms (when implemented)
 // export 'organisms/organisms.dart';

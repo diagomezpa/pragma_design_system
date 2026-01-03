@@ -13,6 +13,66 @@ class AppIcon extends StatelessWidget {
     this.semanticLabel,
   });
 
+  /// Named constructor for a close icon with semantics
+  const AppIcon.close({
+    Key? key,
+    AppIconSize size = AppIconSize.medium,
+    Color? color,
+    VoidCallback? onTap,
+  }) : this(
+          Icons.close,
+          key: key,
+          size: size,
+          color: color,
+          onTap: onTap,
+          semanticLabel: 'Close',
+        );
+
+  /// Named constructor for a back icon with semantics
+  const AppIcon.back({
+    Key? key,
+    AppIconSize size = AppIconSize.medium,
+    Color? color,
+    VoidCallback? onTap,
+  }) : this(
+          Icons.arrow_back,
+          key: key,
+          size: size,
+          color: color,
+          onTap: onTap,
+          semanticLabel: 'Back',
+        );
+
+  /// Named constructor for a menu icon with semantics
+  const AppIcon.menu({
+    Key? key,
+    AppIconSize size = AppIconSize.medium,
+    Color? color,
+    VoidCallback? onTap,
+  }) : this(
+          Icons.menu,
+          key: key,
+          size: size,
+          color: color,
+          onTap: onTap,
+          semanticLabel: 'Menu',
+        );
+
+  /// Named constructor for a search icon with semantics
+  const AppIcon.search({
+    Key? key,
+    AppIconSize size = AppIconSize.medium,
+    Color? color,
+    VoidCallback? onTap,
+  }) : this(
+          Icons.search,
+          key: key,
+          size: size,
+          color: color,
+          onTap: onTap,
+          semanticLabel: 'Search',
+        );
+
   final IconData icon;
   final AppIconSize size;
   final Color? color;

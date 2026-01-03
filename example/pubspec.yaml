@@ -1,0 +1,16 @@
+name: pragma_design_system_example
+description: Example app showcasing the pragma_design_system package
+publish_to: none
+version: 0.0.1
+
+environment:
+  sdk: '>=2.17.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  pragma_design_system:
+    path: ../
+
+flutter:
+  uses-material-design: true
