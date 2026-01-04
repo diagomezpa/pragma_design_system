@@ -109,7 +109,7 @@ class AppListItem extends StatelessWidget {
                       // Title
                       AppText(
                         title,
-                        variant: AppTextVariant.body,
+                        variant: AppTextVariant.bodyLarge,
                         color: isEnabled
                             ? colorScheme.onSurface
                             : colorScheme.onSurface.withOpacity(0.38),

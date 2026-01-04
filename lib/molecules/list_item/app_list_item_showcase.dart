@@ -25,7 +25,7 @@ class _AppListItemShowcaseState extends State<AppListItemShowcase> {
         padding: const EdgeInsets.all(16.0),
         children: [
           // Section 1: Basic list item (title only)
-          const AppText('Basic List Item', variant: AppTextVariant.title),
+          const AppText('Basic List Item', variant: AppTextVariant.titleLarge),
           const SizedBox(height: 8),
           // Simple list item with just a title demonstrates the minimal configuration
           const AppListItem(
@@ -35,7 +35,7 @@ class _AppListItemShowcaseState extends State<AppListItemShowcase> {
           const SizedBox(height: 24),
 
           // Section 2: List item with subtitle
-          const AppText('With Subtitle', variant: AppTextVariant.title),
+          const AppText('With Subtitle', variant: AppTextVariant.titleLarge),
           const SizedBox(height: 8),
           // List item with subtitle shows additional information below the title
           const AppListItem(
@@ -46,7 +46,7 @@ class _AppListItemShowcaseState extends State<AppListItemShowcase> {
           const SizedBox(height: 24),
 
           // Section 3: List item with leading icon
-          const AppText('With Leading Icon', variant: AppTextVariant.title),
+          const AppText('With Leading Icon', variant: AppTextVariant.titleLarge),
           const SizedBox(height: 8),
           // Leading icon provides visual context for the list item
           const AppListItem(
@@ -58,7 +58,7 @@ class _AppListItemShowcaseState extends State<AppListItemShowcase> {
           const SizedBox(height: 24),
 
           // Section 4: List item with trailing icon
-          const AppText('With Trailing Icon', variant: AppTextVariant.title),
+          const AppText('With Trailing Icon', variant: AppTextVariant.titleLarge),
           const SizedBox(height: 8),
           // Trailing icon typically indicates navigation or action
           const AppListItem(
@@ -70,7 +70,7 @@ class _AppListItemShowcaseState extends State<AppListItemShowcase> {
           const SizedBox(height: 24),
 
           // Section 5: List item with leading image (thumbnail)
-          const AppText('With Leading Image', variant: AppTextVariant.title),
+          const AppText('With Leading Image', variant: AppTextVariant.titleLarge),
           const SizedBox(height: 8),
           // Leading image provides visual representation (product, avatar, etc.)
           AppListItem(
@@ -93,7 +93,7 @@ class _AppListItemShowcaseState extends State<AppListItemShowcase> {
           const SizedBox(height: 24),
 
           // Section 6: Disabled list item
-          const AppText('Disabled State', variant: AppTextVariant.title),
+          const AppText('Disabled State', variant: AppTextVariant.titleLarge),
           const SizedBox(height: 8),
           // Disabled list item shows reduced opacity and no interaction
           const AppListItem(
@@ -107,7 +107,7 @@ class _AppListItemShowcaseState extends State<AppListItemShowcase> {
           const SizedBox(height: 24),
 
           // Section 7: Tappable list item with tap simulation
-          const AppText('Interactive List Item', variant: AppTextVariant.title),
+          const AppText('Interactive List Item', variant: AppTextVariant.titleLarge),
           const SizedBox(height: 8),
           // Interactive list item demonstrates tap behavior
           AppListItem(
@@ -121,7 +121,7 @@ class _AppListItemShowcaseState extends State<AppListItemShowcase> {
           const SizedBox(height: 24),
 
           // Section 8: Complete example (all features)
-          const AppText('Complete Example', variant: AppTextVariant.title),
+          const AppText('Complete Example', variant: AppTextVariant.titleLarge),
           const SizedBox(height: 8),
           // Complete example showing all features together
           AppListItem(
@@ -148,7 +148,7 @@ class _AppListItemShowcaseState extends State<AppListItemShowcase> {
           // Footer note
           const AppText(
             'All variants demonstrate the flexibility of AppListItem molecule',
-            variant: AppTextVariant.caption,
+            variant: AppTextVariant.bodySmall,
           ),
         ],
       ),

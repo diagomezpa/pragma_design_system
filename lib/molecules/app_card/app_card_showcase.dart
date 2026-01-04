@@ -20,7 +20,7 @@ class AppCardShowcase extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         children: [
           // Section 1: Basic card with text only
-          const AppText('Basic Card', variant: AppTextVariant.title),
+          const AppText('Basic Card', variant: AppTextVariant.titleLarge),
           const SizedBox(height: 8),
           // Simple card with basic text content demonstrates minimal configuration
           const AppCard(
@@ -29,12 +29,12 @@ class AppCardShowcase extends StatelessWidget {
               children: [
                 AppText(
                   'Welcome Message',
-                  variant: AppTextVariant.subtitle,
+                  variant: AppTextVariant.titleSmall,
                 ),
                 SizedBox(height: 8),
                 AppText(
                   'This is a basic card containing simple text content. Perfect for notifications, announcements, or any grouped information.',
-                  variant: AppTextVariant.body,
+                  variant: AppTextVariant.bodyLarge,
                 ),
               ],
             ),
@@ -43,7 +43,7 @@ class AppCardShowcase extends StatelessWidget {
           const SizedBox(height: 24),
 
           // Section 2: Card wrapping an AppSection
-          const AppText('Card with AppSection', variant: AppTextVariant.title),
+          const AppText('Card with AppSection', variant: AppTextVariant.titleLarge),
           const SizedBox(height: 8),
           // Card containing an AppSection demonstrates composition with other molecules
           const AppCard(
@@ -72,7 +72,7 @@ class AppCardShowcase extends StatelessWidget {
           const SizedBox(height: 24),
 
           // Section 3: Card containing multiple AppListItem
-          const AppText('Card with Multiple List Items', variant: AppTextVariant.title),
+          const AppText('Card with Multiple List Items', variant: AppTextVariant.titleLarge),
           const SizedBox(height: 8),
           // Card as a container for list items demonstrates menu/navigation grouping
           AppCard(
@@ -104,7 +104,7 @@ class AppCardShowcase extends StatelessWidget {
           const SizedBox(height: 24),
 
           // Section 4: Tappable card (onTap → debugPrint)
-          const AppText('Interactive Card', variant: AppTextVariant.title),
+          const AppText('Interactive Card', variant: AppTextVariant.titleLarge),
           const SizedBox(height: 8),
           // Tappable card demonstrates interactive behavior with ripple effect
           AppCard(
@@ -122,12 +122,12 @@ class AppCardShowcase extends StatelessWidget {
                     children: [
                       AppText(
                         'Add to Favorites',
-                        variant: AppTextVariant.subtitle,
+                        variant: AppTextVariant.titleSmall,
                       ),
                       SizedBox(height: 4),
                       AppText(
                         'Tap this card to add the item to your favorites list',
-                        variant: AppTextVariant.body,
+                        variant: AppTextVariant.bodyLarge,
                       ),
                     ],
                   ),
@@ -140,7 +140,7 @@ class AppCardShowcase extends StatelessWidget {
           const SizedBox(height: 24),
 
           // Section 5: Card used as a profile/product summary
-          const AppText('Product Summary Card', variant: AppTextVariant.title),
+          const AppText('Product Summary Card', variant: AppTextVariant.titleLarge),
           const SizedBox(height: 8),
           // Product card demonstrates real-world usage for e-commerce or catalog display
           AppCard(
@@ -173,12 +173,12 @@ class AppCardShowcase extends StatelessWidget {
                         children: [
                           const AppText(
                             'Premium Wireless Headphones',
-                            variant: AppTextVariant.subtitle,
+                            variant: AppTextVariant.titleSmall,
                           ),
                           const SizedBox(height: 4),
                           AppText(
                             'High-quality sound with noise cancellation',
-                            variant: AppTextVariant.body,
+                            variant: AppTextVariant.bodyLarge,
                             color: Theme.of(context).colorScheme.onSurfaceVariant,
                           ),
                           const SizedBox(height: 8),
@@ -186,13 +186,13 @@ class AppCardShowcase extends StatelessWidget {
                             children: [
                               AppText(
                                 '\$199.99',
-                                variant: AppTextVariant.subtitle,
+                                variant: AppTextVariant.titleSmall,
                                 color: Theme.of(context).colorScheme.primary,
                               ),
                               const SizedBox(width: 8),
                               AppText(
                                 '\$249.99',
-                                variant: AppTextVariant.body,
+                                variant: AppTextVariant.bodyLarge,
                                 decoration: TextDecoration.lineThrough,
                                 color: Theme.of(context).colorScheme.onSurfaceVariant,
                               ),
@@ -218,7 +218,7 @@ class AppCardShowcase extends StatelessWidget {
                         const SizedBox(width: 4),
                         AppText(
                           '4.8 (124 reviews)',
-                          variant: AppTextVariant.caption,
+                          variant: AppTextVariant.bodySmall,
                           color: Theme.of(context).colorScheme.onSurfaceVariant,
                         ),
                       ],
@@ -236,7 +236,7 @@ class AppCardShowcase extends StatelessWidget {
           const SizedBox(height: 24),
 
           // Section 6: Custom padding example
-          const AppText('Custom Padding Card', variant: AppTextVariant.title),
+          const AppText('Custom Padding Card', variant: AppTextVariant.titleLarge),
           const SizedBox(height: 8),
           // Demonstrates custom padding configuration
           const AppCard(
@@ -250,12 +250,12 @@ class AppCardShowcase extends StatelessWidget {
                 SizedBox(height: 12),
                 AppText(
                   'Custom Spacing',
-                  variant: AppTextVariant.subtitle,
+                  variant: AppTextVariant.titleSmall,
                 ),
                 SizedBox(height: 8),
                 AppText(
                   'This card uses custom padding (24x20) instead of the default 16px all around.',
-                  variant: AppTextVariant.body,
+                  variant: AppTextVariant.bodyLarge,
                   textAlign: TextAlign.center,
                 ),
               ],
@@ -267,7 +267,7 @@ class AppCardShowcase extends StatelessWidget {
           // Footer note
           const AppText(
             'All variants demonstrate the versatility of AppCard as a surface container',
-            variant: AppTextVariant.caption,
+            variant: AppTextVariant.bodySmall,
           ),
         ],
       ),

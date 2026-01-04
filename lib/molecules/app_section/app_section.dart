@@ -73,7 +73,7 @@ class AppSection extends StatelessWidget {
           // Section title
           AppText(
             title,
-            variant: AppTextVariant.title,
+            variant: AppTextVariant.titleLarge,
             color: colorScheme.onSurface,
             fontWeight: FontWeight.w600,
           ),

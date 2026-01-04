@@ -29,7 +29,7 @@ class _AppSectionShowcaseState extends State<AppSectionShowcase> {
             title: 'Basic Section',
             child: const AppText(
               'This is a basic section with just a title. It demonstrates the minimal configuration of AppSection with simple text content.',
-              variant: AppTextVariant.body,
+              variant: AppTextVariant.bodyLarge,
             ),
           ),
 
@@ -45,12 +45,12 @@ class _AppSectionShowcaseState extends State<AppSectionShowcase> {
               children: const [
                 AppText(
                   'Content with Context',
-                  variant: AppTextVariant.subtitle,
+                  variant: AppTextVariant.titleSmall,
                 ),
                 AppSpacer(size: AppSpacerSize.small),
                 AppText(
                   'When you need to provide additional context or explanation, use the description parameter to give users more information about what they\'ll find in this section.',
-                  variant: AppTextVariant.body,
+                  variant: AppTextVariant.bodyLarge,
                 ),
               ],
             ),
@@ -127,7 +127,7 @@ class _AppSectionShowcaseState extends State<AppSectionShowcase> {
           // Footer note
           const AppText(
             'All examples demonstrate the flexibility and consistency of AppSection molecule',
-            variant: AppTextVariant.caption,
+            variant: AppTextVariant.bodySmall,
           ),
         ],
       ),

@@ -221,7 +221,7 @@ class AppFormField extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: AppText(
               errorText ?? helperText!,
-              variant: AppTextVariant.caption,
+              variant: AppTextVariant.bodySmall,
               color: errorText != null
                   ? colorScheme.error
                   : enabled

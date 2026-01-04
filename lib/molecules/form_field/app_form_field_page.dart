@@ -44,7 +44,7 @@ class _ShowcasePageState extends State<ShowcasePage> {
         padding: const EdgeInsets.all(16.0),
         children: [
           // Section: Default field (label + hint)
-          const AppText('Default', variant: AppTextVariant.title),
+          const AppText('Default', variant: AppTextVariant.titleLarge),
           const SizedBox(height: 8),
           // Default field demonstrates a simple label and hint
           AppFormField(
@@ -57,7 +57,7 @@ class _ShowcasePageState extends State<ShowcasePage> {
           const SizedBox(height: 24),
 
           // Section: Field with helper text
-          const AppText('With Helper Text', variant: AppTextVariant.title),
+          const AppText('With Helper Text', variant: AppTextVariant.titleLarge),
           const SizedBox(height: 8),
           // Helper text shows additional guidance below the field
           AppFormField(
@@ -73,7 +73,7 @@ class _ShowcasePageState extends State<ShowcasePage> {
 
           // Section: Field with error text (simulation)
           const AppText('Error State (simulated)',
-              variant: AppTextVariant.title),
+              variant: AppTextVariant.titleLarge),
           const SizedBox(height: 8),
           // Error text overrides helper text. We toggle error simulation with a button.
           AppFormField(
@@ -100,7 +100,7 @@ class _ShowcasePageState extends State<ShowcasePage> {
           const SizedBox(height: 24),
 
           // Section: Password field using obscureText
-          const AppText('Password Field', variant: AppTextVariant.title),
+          const AppText('Password Field', variant: AppTextVariant.titleLarge),
           const SizedBox(height: 8),
           // Obscure text is used for passwords; controller used to access value
           AppFormField(
@@ -115,7 +115,7 @@ class _ShowcasePageState extends State<ShowcasePage> {
 
           // Section: Field with prefix and suffix icons
           const AppText('With Prefix & Suffix Icons',
-              variant: AppTextVariant.title),
+              variant: AppTextVariant.titleLarge),
           const SizedBox(height: 8),
           // Demonstrates how to pass AppIcon atoms as prefix and suffix
           AppFormField(
@@ -131,7 +131,7 @@ class _ShowcasePageState extends State<ShowcasePage> {
           const SizedBox(height: 40),
 
           // Footer note
-          AppText('End of showcase', variant: AppTextVariant.caption),
+          AppText('End of showcase', variant: AppTextVariant.bodySmall),
         ],
       ),
     );
