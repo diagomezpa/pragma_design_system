@@ -13,6 +13,7 @@ class AppText extends StatelessWidget {
     this.maxLines,
     this.overflow,
     this.fontWeight,
+    this.decoration,
   });
 
   final String text;
@@ -22,6 +23,7 @@ class AppText extends StatelessWidget {
   final int? maxLines;
   final TextOverflow? overflow;
   final FontWeight? fontWeight;
+  final TextDecoration? decoration;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +36,7 @@ class AppText extends StatelessWidget {
     final style = baseStyle.copyWith(
       color: color,
       fontWeight: fontWeight,
+      decoration: decoration,
     );
 
     return Text(

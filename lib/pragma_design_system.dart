@@ -24,6 +24,7 @@ export 'atoms/app_spacer.dart';
 export 'molecules/form_field/app_form_field.dart';
 export 'molecules/app_section/app_section.dart';
 export 'molecules/list_item/app_list_item.dart';
+export 'molecules/app_card/app_card.dart';
 
 // Export organisms (when implemented)
 // export 'organisms/organisms.dart';
