@@ -30,6 +30,9 @@ export 'molecules/app_price/app_price.dart';
 
 // Export organisms (when implemented)
 // export 'organisms/organisms.dart';
+export 'organisms/app_product_list_item/app_product_list_item.dart';
+export 'organisms/app_form_section/app_form_section.dart';
+export 'organisms/app_card_list/app_card_list.dart';
 
 // Export templates (when implemented)
 // export 'templates/templates.dart';
