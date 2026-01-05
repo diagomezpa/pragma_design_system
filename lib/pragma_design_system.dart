@@ -34,6 +34,8 @@ export 'organisms/app_product_list_item/app_product_list_item.dart';
 export 'organisms/app_form_section/app_form_section.dart';
 export 'organisms/app_card_list/app_card_list.dart';
 export 'organisms/app_empty_state_section/app_empty_state_section.dart';
+export 'organisms/app_settings_group/app_settings_group.dart';
+
 
 // Export templates (when implemented)
 // export 'templates/templates.dart';
