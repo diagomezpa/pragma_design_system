@@ -41,6 +41,7 @@ export 'organisms/app_settings_group/app_settings_group.dart';
 // export 'templates/templates.dart';
 export 'templates/product_list/product_list_template.dart';
 export 'templates/form_pages/form_page_template.dart';
+export 'templates/empty_state_dashboard/empty_state_dashboard_template.dart';
 
 // Export pages (when implemented)
 // export 'pages/pages.dart';
