@@ -19,7 +19,7 @@ class ExampleApp extends StatelessWidget {
       title: 'Pragma Design System - Example',
       darkTheme: AppTheme.dark(),
       themeMode: ThemeMode.system,
-      home: const EmptyStateDashboardTemplateShowcase(),
+      home: const SettingsPageTemplateShowcase(),
     
     );
   }
