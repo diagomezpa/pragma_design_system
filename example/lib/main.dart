@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pragma_design_system/theme/app_theme.dart';
-import 'package:pragma_design_system/molecules/molecules_showcase.dart';
-import 'package:pragma_design_system/organisms/organisms_showcase.dart';
-import 'package:pragma_design_system/templates/templates_showcase.dart';
+import 'package:pragma_design_system/pages/home/home_page.dart';
 
 
 void main() {
@@ -19,7 +17,7 @@ class ExampleApp extends StatelessWidget {
       title: 'Pragma Design System - Example',
       darkTheme: AppTheme.dark(),
       themeMode: ThemeMode.system,
-      home: const TemplatesListPage(),
+      home: const HomePage(),
     
     );
   }

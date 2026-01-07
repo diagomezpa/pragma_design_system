@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pragma_design_system/pragma_design_system.dart';
-import '../templates/empty_state_dashboard/empty_state_dashboard_template_showcase.dart';
-import '../templates/form_pages/form_page_template_showcase.dart';
-import '../templates/product_list/product_list_template_showcase.dart';
-import '../templates/settings_page/settings_page_template_showcase.dart';
+import 'empty_state_dashboard/empty_state_dashboard_template_showcase.dart';
+import 'form_pages/form_page_template_showcase.dart';
+import 'product_list/product_list_template_showcase.dart';
+import 'settings_page/settings_page_template_showcase.dart';
 
 /// TemplatesListPage - A list of all template showcase pages.
 ///
