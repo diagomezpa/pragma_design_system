@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pragma_design_system/pragma_design_system.dart';
-import 'package:pragma_design_system/pages/form/form_page.dart';
+import 'package:pragma_design_system/pages/other_pages/form/form_page.dart';
 
 /// FormPageShowcase - Demonstrates a real Page implementation in action.
 ///

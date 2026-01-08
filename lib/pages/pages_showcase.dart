@@ -1,1 +1,1 @@
-export 'product_list/product_list_page_showcase.dart';
+export 'other_pages/product_list/product_list_page_showcase.dart';

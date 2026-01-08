@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pragma_design_system/pages/other_pages/other_pages_list_pages.dart';
 import 'package:pragma_design_system/pragma_design_system.dart';
 
 import '../molecules/molecules_list_page.dart';
@@ -98,53 +99,11 @@ class HomePage extends StatelessWidget {
       ),
       ShowcaseListItem(
         title: 'Pages',
-        description: 'Complete page examples with real content and user flows',
+        description: 'Complete page implementations demonstrating real content and user flows',
         icon: Icons.article_outlined,
-        page: const _PagesPlaceholderPage(),
+        page: const OtherPagesListPage(),
       ),
     ];
   }
 }
 
-/// Temporary placeholder page for Pages category.
-/// TODO: Replace with actual PagesListPage when Pages are implemented.
-class _PagesPlaceholderPage extends StatelessWidget {
-  const _PagesPlaceholderPage();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Pages'),
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Padding(
-          padding: EdgeInsets.all(24.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.construction_outlined,
-                size: 64,
-                color: Colors.grey,
-              ),
-              SizedBox(height: 16),
-              AppText(
-                'Pages Coming Soon',
-                variant: AppTextVariant.titleLarge,
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(height: 8),
-              AppText(
-                'Complete page examples with real content and user flows will be available in future updates.',
-                variant: AppTextVariant.bodyMedium,
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
