@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pragma_design_system/pages/form/form_page_showcase.dart';
 import 'package:pragma_design_system/theme/app_theme.dart';
 import 'package:pragma_design_system/pages/home/home_page.dart';
 import 'package:pragma_design_system/pages/product_list/product_list_page_showcase.dart';
@@ -18,7 +19,7 @@ class ExampleApp extends StatelessWidget {
       title: 'Pragma Design System - Example',
       darkTheme: AppTheme.dark(),
       themeMode: ThemeMode.system,
-      home: const ProductListPageShowcase(),
+      home: const FormPageShowcase(),
     
     );
   }
