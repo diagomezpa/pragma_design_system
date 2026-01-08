@@ -1,36 +1,36 @@
 import 'package:flutter/material.dart';
 
-/// AppText - A reusable text widget that provides consistent typography
+/// AppText - Un widget de texto reutilizable que proporciona tipografía consistente
 ///
-/// This atom centralizes text styling by mapping directly to Material 3 TextTheme
-/// properties. It ensures typography consistency across the application while
-/// providing optional overrides for specific use cases.
+/// Este átomo centraliza el estilo de texto mapeando directamente a las propiedades
+/// de Material 3 TextTheme. Asegura consistencia tipográfica en toda la aplicación
+/// mientras proporciona sobreescrituras opcionales para casos de uso específicos.
 ///
-/// **Theme Dependency:**
-/// AppText requires a properly configured TextTheme in ThemeData. Use AppTheme.light()
-/// or AppTheme.dark() to ensure all required text styles are available. The widget
-/// will fail fast with a descriptive error if theme configuration is incomplete.
+/// **Dependencia del Tema:**
+/// AppText requiere un TextTheme correctamente configurado en ThemeData. Usa AppTheme.light()
+/// o AppTheme.dark() para asegurar que todos los estilos de texto requeridos estén disponibles.
+/// El widget fallará rápidamente con un error descriptivo si la configuración del tema está incompleta.
 ///
-/// **Variant Mapping:**
-/// Each AppTextVariant maps 1:1 to a Material 3 TextTheme property:
+/// **Mapeo de Variantes:**
+/// Cada AppTextVariant mapea 1:1 a una propiedad de Material 3 TextTheme:
 /// - headlineLarge → TextTheme.headlineLarge
 /// - titleMedium → TextTheme.titleMedium
 /// - bodyLarge → TextTheme.bodyLarge
 /// - etc.
 ///
-/// **Override Behavior:**
-/// Optional parameters (color, fontWeight, decoration) are applied non-destructively
-/// on top of the theme's base style. This preserves theme consistency while allowing
-/// contextual customization when needed.
+/// **Comportamiento de Sobreescritura:**
+/// Los parámetros opcionales (color, fontWeight, decoration) se aplican de forma no destructiva
+/// sobre el estilo base del tema. Esto preserva la consistencia del tema mientras permite
+/// personalización contextual cuando se necesite.
 ///
-/// Usage:
+/// Uso:
 /// ```dart
-/// // Uses theme's bodyLarge style
-/// AppText('Default body text')
+/// // Usa el estilo bodyLarge del tema
+/// AppText('Texto de cuerpo por defecto')
 ///
-/// // Theme style with color override  
+/// // Estilo del tema con sobreescritura de color  
 /// AppText(
-///   'Colored text',
+///   'Texto coloreado',
 ///   variant: AppTextVariant.titleLarge,
 ///   color: Theme.of(context).colorScheme.primary,
 /// )
@@ -61,10 +61,10 @@ class AppText extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     
-    // Get base style from variant
+    // Obtener estilo base de la variante
     TextStyle baseStyle = _getBaseStyle(theme);
     
-    // Apply custom overrides
+    // Aplicar sobreescrituras personalizadas
     final style = baseStyle.copyWith(
       color: color,
       fontWeight: fontWeight,
@@ -117,50 +117,50 @@ class AppText extends StatelessWidget {
     }
   }
 
-  /// Throws a descriptive error when theme configuration is missing
+  /// Lanza un error descriptivo cuando falta configuración del tema
   Never _throwMissingThemeError(String styleName) {
     throw FlutterError(
-      'AppText: Missing text style "$styleName" in ThemeData.textTheme.\n'
-      'Ensure your app uses AppTheme.light() or AppTheme.dark() which provide '
-      'complete text theme configuration via appTextTheme().\n'
-      'AppText requires all text styles to be properly configured in the theme.',
+      'AppText: Falta el estilo de texto "$styleName" en ThemeData.textTheme.\n'
+      'Asegúrate de que tu app use AppTheme.light() o AppTheme.dark() que proporcionan '
+      'configuración completa del tema de texto via appTextTheme().\n'
+      'AppText requiere que todos los estilos de texto estén correctamente configurados en el tema.',
     );
   }
 }
 
-/// Enum defining text variants that map 1:1 to Material 3 TextTheme properties
+/// Enum que define las variantes de texto que mapean 1:1 a las propiedades de Material 3 TextTheme
 ///
-/// Each variant corresponds directly to a TextTheme property, ensuring consistent
-/// typography hierarchy and eliminating ambiguity about which theme style to use.
-/// This design enforces proper theme configuration and fails fast when styles are missing.
+/// Cada variante corresponde directamente a una propiedad TextTheme, asegurando
+/// jerarquía tipográfica consistente y eliminando ambigüedad sobre qué estilo del tema usar.
+/// Este diseño impone configuración apropiada del tema y falla rápidamente cuando faltan estilos.
 enum AppTextVariant {
-  /// Maps to TextTheme.headlineLarge - Large display text for hero sections
+  /// Mapea a TextTheme.headlineLarge - Texto de display grande para secciones hero
   headlineLarge,
   
-  /// Maps to TextTheme.headlineMedium - Medium headlines for section headers  
+  /// Mapea a TextTheme.headlineMedium - Títulos medianos para cabeceras de sección
   headlineMedium,
   
-  /// Maps to TextTheme.headlineSmall - Small headlines for subsection headers
+  /// Mapea a TextTheme.headlineSmall - Títulos pequeños para cabeceras de subsección
   headlineSmall,
   
-  /// Maps to TextTheme.titleLarge - Large titles for primary content headers
+  /// Mapea a TextTheme.titleLarge - Títulos grandes para cabeceras de contenido primario
   titleLarge,
   
-  /// Maps to TextTheme.titleMedium - Medium titles for secondary content headers
+  /// Mapea a TextTheme.titleMedium - Títulos medianos para cabeceras de contenido secundario
   titleMedium,
   
-  /// Maps to TextTheme.titleSmall - Small titles for supporting headers
+  /// Mapea a TextTheme.titleSmall - Títulos pequeños para cabeceras de soporte
   titleSmall,
   
-  /// Maps to TextTheme.bodyLarge - Large body text for primary content
+  /// Mapea a TextTheme.bodyLarge - Texto de cuerpo grande para contenido primario
   bodyLarge,
   
-  /// Maps to TextTheme.bodyMedium - Medium body text for secondary content  
+  /// Mapea a TextTheme.bodyMedium - Texto de cuerpo mediano para contenido secundario
   bodyMedium,
   
-  /// Maps to TextTheme.bodySmall - Small body text for captions and metadata
+  /// Mapea a TextTheme.bodySmall - Texto de cuerpo pequeño para captions y metadatos
   bodySmall,
   
-  /// Maps to TextTheme.labelLarge - Labels for buttons and interactive elements
+  /// Mapea a TextTheme.labelLarge - Etiquetas para botones y elementos interactivos
   labelLarge,
 }

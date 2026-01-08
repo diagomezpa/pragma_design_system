@@ -1,6 +1,6 @@
 import 'package:flutter/painting.dart';
 
-/// AppColors - Semantic color tokens for the design system
+/// AppColors - Tokens de color semánticos para el sistema de diseño
 ///
 /// This class provides color tokens following Material 3 design principles.
 /// Colors are defined semantically based on their purpose and meaning, 

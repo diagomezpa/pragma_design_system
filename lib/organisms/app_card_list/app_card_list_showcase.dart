@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pragma_design_system/pragma_design_system.dart';
 
-/// AppCardListShowcase - Demonstrates various `AppCardList` variants.
+/// AppCardListShowcase - Demuestra varias variantes de `AppCardList`.
 ///
-/// This page showcases different configurations and use cases of the AppCardList organism.
-/// It demonstrates how the organism can be used to display card collections with different
-/// layouts, separators, and scrolling behaviors.
+/// Esta página muestra diferentes configuraciones y casos de uso del organismo AppCardList.
+/// Demuestra cómo puede usarse para mostrar colecciones de tarjetas con distintos
+/// diseños, separadores y comportamientos de desplazamiento.
 class AppCardListShowcase extends StatelessWidget {
   const AppCardListShowcase({super.key});
 

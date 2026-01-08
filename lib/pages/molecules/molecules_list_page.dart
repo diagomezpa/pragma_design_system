@@ -4,28 +4,28 @@ import 'package:pragma_design_system/pragma_design_system.dart';
 
 import '../shared/showcase_list_item.dart';
 
-/// MoleculesListPage - A list page displaying all available molecule showcases.
+/// MoleculesListPage - Página de lista que muestra todos los showcases de moléculas disponibles.
 ///
-/// This page serves as the entry point for exploring Molecule components
-/// in the design system example app. Molecules represent UI components that
-/// are composed of multiple atoms working together to form functional units
-/// (e.g., form fields, list items, cards).
+/// Esta página sirve como punto de entrada para explorar componentes tipo Molecule.
+/// en la aplicación de ejemplo del sistema de diseño. Las moléculas representan componentes de UI que
+/// están compuestos de múltiples átomos que trabajan juntos para formar unidades funcionales
+/// (por ejemplo, campos de formulario, elementos de lista, tarjetas).
 ///
-/// In Atomic Design methodology:
-/// - **Molecules** are groups of atoms bonded together to form functional
-///   components. They have their own properties and serve as the backbone
-///   of our design system, providing reusable building blocks for more
-///   complex interfaces.
+/// En la metodología de Diseño Atómico:
+/// - **Moléculas** son grupos de átomos unidos para formar componentes funcionales.
+///   Tienen sus propias propiedades y sirven como la columna vertebral
+///   de nuestro sistema de diseño, proporcionando bloques de construcción reutilizables para interfaces
+///   más complejas.
 ///
-/// This page provides:
-/// - Overview of all available molecule showcase pages
-/// - Easy navigation to individual molecule demonstrations
-/// - Consistent interface following example app conventions
+/// Esta página proporciona:
+/// - Vista general de todas las páginas de showcase de moléculas disponibles
+/// - Navegación fácil hacia demostraciones individuales de moléculas
+/// - Interfaz consistente siguiendo las convenciones de la aplicación de ejemplo
 ///
-/// Architecture:
-/// - Lives in the example app (not the design system package)
-/// - Uses shared `ShowcaseListItem` for consistent navigation
-/// - Imports molecule showcases via their barrel file
+/// Arquitectura:
+/// - Vive en la aplicación de ejemplo (no en el paquete del sistema de diseño)
+/// - Usa `ShowcaseListItem` compartido para navegación consistente
+/// - Importa los showcases de moléculas a través de su archivo barrel
 class MoleculesListPage extends StatelessWidget {
   /// Creates a molecules list page.
   const MoleculesListPage({super.key});
@@ -56,7 +56,7 @@ class MoleculesListPage extends StatelessWidget {
     );
   }
 
-  /// Builds the list of molecule showcase items.
+  /// Construye la lista de elementos de showcase de moléculas.
   List<Widget> _buildMoleculesList() {
     return [
       ShowcaseListItem(

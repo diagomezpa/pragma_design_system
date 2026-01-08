@@ -1,30 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:pragma_design_system/pragma_design_system.dart';
 
-/// AppFormSection - An organism for grouping form fields with title and description
+/// AppFormSection - Un organismo para agrupar campos de formulario con título y descripción
 ///
-/// This organism provides a consistent way to structure form sections throughout
-/// the application. It combines multiple form fields with optional title, description,
-/// and divider elements to create cohesive form layouts.
+/// Este organismo proporciona una forma consistente de estructurar secciones de formulario
+/// en toda la aplicación. Combina múltiples campos de formulario con título opcional,
+/// descripción y elementos divisorios para crear layouts de formulario coherentes.
 ///
-/// **Organism Responsibility:**
-/// - Groups related form fields into logical sections
-/// - Provides consistent title and description styling
-/// - Maintains proper spacing between form elements
-/// - Offers optional visual separation with dividers
+/// **Responsabilidad del organismo:**
+/// - Agrupar campos relacionados en secciones lógicas
+/// - Proveer estilo consistente para títulos y descripciones
+/// - Mantener espaciado apropiado entre elementos del formulario
+/// - Ofrecer separación visual opcional con divisores
 ///
-/// **Composition:**
-/// Uses design system atoms and molecules:
-/// - AppText for titles and descriptions
-/// - AppSpacer for consistent spacing
-/// - AppDivider for optional visual separation
-/// - Flexible children layout for form fields
+/// **Composición:**
+/// Usa átomos y moléculas del sistema de diseño:
+/// - AppText para títulos y descripciones
+/// - AppSpacer para espaciado consistente
+/// - AppDivider para separación visual opcional
+/// - Layout flexible para los hijos (campos de formulario)
 ///
-/// **Design Patterns:**
-/// - Follows Material 3 form section conventions
-/// - Maintains accessibility and theming consistency
-/// - Supports flexible content arrangement
-/// - Uses semantic spacing from design system
+/// **Patrones de diseño:**
+/// - Sigue convenciones de secciones de formulario de Material 3
+/// - Mantiene accesibilidad y consistencia de theming
+/// - Soporta disposición flexible de contenido
+/// - Usa espaciado semántico del sistema de diseño
 class AppFormSection extends StatelessWidget {
   const AppFormSection({
     super.key,

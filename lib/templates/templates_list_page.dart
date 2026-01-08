@@ -5,10 +5,10 @@ import 'form_pages/form_page_template_showcase.dart';
 import 'product_list/product_list_template_showcase.dart';
 import 'settings_page/settings_page_template_showcase.dart';
 
-/// TemplatesListPage - A list of all template showcase pages.
+/// TemplatesListPage - Una lista de todas las páginas de showcase de plantillas.
 ///
-/// This page displays a list of all available template showcase pages,
-/// allowing users to navigate to each specific template demonstration.
+/// Esta página muestra una lista de todas las páginas de showcase de plantillas disponibles,
+/// permitiendo a los usuarios navegar a cada demostración específica de plantilla.
 /// It serves as a central hub for exploring all template components
 /// in the design system.
 class TemplatesListPage extends StatelessWidget {

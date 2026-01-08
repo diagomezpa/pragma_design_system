@@ -1,36 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:pragma_design_system/pragma_design_system.dart';
 
-/// AppCardList - An organism for displaying a vertical list of cards with consistent spacing
+/// AppCardList - Un organismo para mostrar una lista vertical de tarjetas con espaciado consistente
 ///
-/// This organism provides a structured way to display multiple cards in a vertical
-/// layout with proper spacing, optional titles, and flexible scrolling behavior.
-/// It combines design system components to create consistent card-based interfaces.
+/// Este organismo proporciona una forma estructurada de mostrar múltiples tarjetas en
+/// un layout vertical con espaciado apropiado, títulos opcionales y comportamiento
+/// de desplazamiento flexible. Combina componentes del sistema de diseño para crear
+/// interfaces basadas en tarjetas coherentes.
 ///
-/// **Organism Responsibility:**
-/// - Arranges multiple cards in a vertical layout
-/// - Provides consistent spacing between cards
-/// - Offers optional title and separator customization
-/// - Handles both scrollable and non-scrollable layouts
-/// - Maintains design system spacing and theming
+/// **Responsabilidad del organismo:**
+/// - Organizar múltiples tarjetas en un layout vertical
+/// - Proveer espaciado consistente entre tarjetas
+/// - Ofrecer personalización opcional de título y separador
+/// - Manejar layouts desplazables y no desplazables
+/// - Mantener el espaciado y tema del sistema de diseño
 ///
-/// **What this organism does NOT do:**
-/// - Data fetching or API calls
-/// - Empty state handling (use AppEmptyState separately)
-/// - Business logic or state management
-/// - Card content generation (cards should be pre-built)
-/// - Navigation or routing logic
+/// **Lo que este organismo NO hace:**
+/// - Peticiones de datos o llamadas a APIs
+/// - Manejo de estados vacíos (usar AppEmptyState por separado)
+/// - Lógica de negocio o gestión de estado
+/// - Generación de contenido de tarjetas (las tarjetas deben estar preconstruidas)
+/// - Lógica de navegación o enrutamiento
 ///
-/// **Composition:**
-/// Uses design system components:
-/// - AppText for optional title display
-/// - AppSpacer for consistent spacing
-/// - AppDivider as default separator
-/// - ListView.separated or Column for layout structure
+/// **Composición:**
+/// Utiliza componentes del sistema de diseño:
+/// - AppText para mostrar títulos opcionales
+/// - AppSpacer para espaciado consistente
+/// - AppDivider como separador por defecto
+/// - ListView.separated o Column para la estructura del layout
 ///
-/// **Usage Examples:**
+/// **Ejemplos de uso:**
 /// ```dart
-/// // Basic card list
+/// // Lista básica de tarjetas
 /// AppCardList(
 ///   children: [
 ///     AppCard(child: Text('Card 1')),
@@ -39,7 +40,7 @@ import 'package:pragma_design_system/pragma_design_system.dart';
 ///   ],
 /// )
 ///
-/// // Card list with title and custom separator
+/// // Lista de tarjetas con título y separador personalizado
 /// AppCardList(
 ///   title: 'Recent Items',
 ///   children: cardWidgets,
@@ -47,7 +48,7 @@ import 'package:pragma_design_system/pragma_design_system.dart';
 ///   isScrollable: true,
 /// )
 ///
-/// // Scrollable card list with custom padding
+/// // Lista desplazable con padding personalizado
 /// AppCardList(
 ///   title: 'Product Categories',
 ///   children: productCards,

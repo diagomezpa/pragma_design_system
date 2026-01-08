@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-/// AppIcon - A reusable icon wrapper that provides consistent icon styling
-/// This atom centralizes icon appearance and behavior across the application
-/// Supports different sizes, colors, and interaction states
+/// AppIcon - Un envoltorio de ícono reutilizable que proporciona estilo consistente de íconos
+/// Este átomo centraliza la apariencia y comportamiento de los íconos en toda la aplicación
+/// Soporta diferentes tamaños, colores y estados de interacción
 class AppIcon extends StatelessWidget {
   const AppIcon(
     this.icon, {
@@ -13,7 +13,7 @@ class AppIcon extends StatelessWidget {
     this.semanticLabel,
   });
 
-  /// Named constructor for a close icon with semantics
+  /// Constructor nombrado para un ícono de cerrar con semántica
   const AppIcon.close({
     Key? key,
     AppIconSize size = AppIconSize.medium,
@@ -28,7 +28,7 @@ class AppIcon extends StatelessWidget {
           semanticLabel: 'Close',
         );
 
-  /// Named constructor for a back icon with semantics
+  /// Constructor nombrado para un ícono de retroceso con semántica
   const AppIcon.back({
     Key? key,
     AppIconSize size = AppIconSize.medium,
@@ -43,7 +43,7 @@ class AppIcon extends StatelessWidget {
           semanticLabel: 'Back',
         );
 
-  /// Named constructor for a menu icon with semantics
+  /// Constructor nombrado para un ícono de menú con semántica
   const AppIcon.menu({
     Key? key,
     AppIconSize size = AppIconSize.medium,
@@ -58,7 +58,7 @@ class AppIcon extends StatelessWidget {
           semanticLabel: 'Menu',
         );
 
-  /// Named constructor for a search icon with semantics
+  /// Constructor nombrado para un ícono de búsqueda con semántica
   const AppIcon.search({
     Key? key,
     AppIconSize size = AppIconSize.medium,
@@ -91,12 +91,12 @@ class AppIcon extends StatelessWidget {
       semanticLabel: semanticLabel,
     );
 
-    // If no onTap callback is provided, return just the icon
+    // Si no se proporciona callback onTap, devolver solo el ícono
     if (onTap == null) {
       return iconWidget;
     }
 
-    // If onTap is provided, wrap in an interactive container
+    // Si se proporciona onTap, envolver en un contenedor interactivo
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(_getIconSize() / 2),
@@ -123,7 +123,7 @@ class AppIcon extends StatelessWidget {
   }
 
   double _getPadding() {
-    // Add padding only when interactive (has onTap)
+    // Agregar padding solo cuando es interactivo (tiene onTap)
     if (onTap == null) return 0;
     
     switch (size) {
@@ -141,9 +141,9 @@ class AppIcon extends StatelessWidget {
   }
 }
 
-/// Factory constructor for commonly used icons with semantic meaning
+/// Constructor factory para íconos comúnmente usados con significado semántico
 extension AppIconFactory on AppIcon {
-  /// Creates a close icon with appropriate semantics
+  /// Crea un ícono de cerrar con semántica apropiada
   static AppIcon close({
     AppIconSize size = AppIconSize.medium,
     Color? color,
@@ -158,7 +158,7 @@ extension AppIconFactory on AppIcon {
     );
   }
 
-  /// Creates a back arrow icon with appropriate semantics
+  /// Crea un ícono de flecha de retroceso con semántica apropiada
   static AppIcon back({
     AppIconSize size = AppIconSize.medium,
     Color? color,
@@ -173,7 +173,7 @@ extension AppIconFactory on AppIcon {
     );
   }
 
-  /// Creates a menu icon with appropriate semantics
+  /// Crea un ícono de menú con semántica apropiada
   static AppIcon menu({
     AppIconSize size = AppIconSize.medium,
     Color? color,
@@ -188,7 +188,7 @@ extension AppIconFactory on AppIcon {
     );
   }
 
-  /// Creates a search icon with appropriate semantics
+  /// Crea un ícono de búsqueda con semántica apropiada
   static AppIcon search({
     AppIconSize size = AppIconSize.medium,
     Color? color,
@@ -204,7 +204,7 @@ extension AppIconFactory on AppIcon {
   }
 }
 
-/// Enum defining different icon sizes available in the design system
+/// Enum que define los diferentes tamaños de ícono disponibles en el sistema de diseño
 enum AppIconSize {
   extraSmall,
   small,

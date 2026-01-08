@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-/// AppSpacer - A standardized spacing widget for consistent layouts
-/// This atom provides predefined spacing values that maintain design consistency
-/// Supports both horizontal and vertical spacing with various size options
+/// AppSpacer - Un widget de espaciado estandarizado para layouts consistentes
+/// Este átomo proporciona valores de espaciado predefinidos que mantienen consistencia de diseño
+/// Soporta espaciado horizontal y vertical con varias opciones de tamaño
 class AppSpacer extends StatelessWidget {
   const AppSpacer({
     super.key,
@@ -12,7 +12,7 @@ class AppSpacer extends StatelessWidget {
     this.height,
   });
 
-  /// Custom spacer with explicit dimensions
+  /// Espaciador personalizado con dimensiones explícitas
   const AppSpacer.custom({
     super.key,
     this.width,
@@ -27,7 +27,7 @@ class AppSpacer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // If custom dimensions are provided, use them
+    // Si se proporcionan dimensiones personalizadas, usarlas
     if (width != null || height != null) {
       return SizedBox(
         width: width,
@@ -35,7 +35,7 @@ class AppSpacer extends StatelessWidget {
       );
     }
 
-    // Use predefined spacing based on size and direction
+    // Usar espaciado predefinido basado en tamaño y dirección
     final spacing = _getSpacing();
 
     if (direction == AppSpacerDirection.horizontal) {
@@ -63,9 +63,9 @@ class AppSpacer extends StatelessWidget {
   }
 }
 
-/// Factory constructors for common spacing use cases
+/// Constructores factory para casos de uso comunes de espaciado
 extension AppSpacerFactory on AppSpacer {
-  /// Creates extra small vertical spacing (4px)
+  /// Crea espaciado vertical extra pequeño (4px)
   static Widget extraSmallVertical() {
     return const AppSpacer(
       size: AppSpacerSize.extraSmall,
@@ -73,7 +73,7 @@ extension AppSpacerFactory on AppSpacer {
     );
   }
 
-  /// Creates small vertical spacing (8px)
+  /// Crea espaciado vertical pequeño (8px)
   static Widget smallVertical() {
     return const AppSpacer(
       size: AppSpacerSize.small,
@@ -81,7 +81,7 @@ extension AppSpacerFactory on AppSpacer {
     );
   }
 
-  /// Creates medium vertical spacing (16px)
+  /// Crea espaciado vertical mediano (16px)
   static Widget mediumVertical() {
     return const AppSpacer(
       size: AppSpacerSize.medium,
@@ -89,7 +89,7 @@ extension AppSpacerFactory on AppSpacer {
     );
   }
 
-  /// Creates large vertical spacing (24px)
+  /// Crea espaciado vertical grande (24px)
   static Widget largeVertical() {
     return const AppSpacer(
       size: AppSpacerSize.large,
@@ -97,7 +97,7 @@ extension AppSpacerFactory on AppSpacer {
     );
   }
 
-  /// Creates extra large vertical spacing (32px)
+  /// Crea espaciado vertical extra grande (32px)
   static Widget extraLargeVertical() {
     return const AppSpacer(
       size: AppSpacerSize.extraLarge,
@@ -105,7 +105,7 @@ extension AppSpacerFactory on AppSpacer {
     );
   }
 
-  /// Creates huge vertical spacing (48px)
+  /// Crea espaciado vertical enorme (48px)
   static Widget hugeVertical() {
     return const AppSpacer(
       size: AppSpacerSize.huge,
@@ -113,7 +113,7 @@ extension AppSpacerFactory on AppSpacer {
     );
   }
 
-  /// Creates extra small horizontal spacing (4px)
+  /// Crea espaciado horizontal extra pequeño (4px)
   static Widget extraSmallHorizontal() {
     return const AppSpacer(
       size: AppSpacerSize.extraSmall,
@@ -121,7 +121,7 @@ extension AppSpacerFactory on AppSpacer {
     );
   }
 
-  /// Creates small horizontal spacing (8px)
+  /// Crea espaciado horizontal pequeño (8px)
   static Widget smallHorizontal() {
     return const AppSpacer(
       size: AppSpacerSize.small,
@@ -129,7 +129,7 @@ extension AppSpacerFactory on AppSpacer {
     );
   }
 
-  /// Creates medium horizontal spacing (16px)
+  /// Crea espaciado horizontal mediano (16px)
   static Widget mediumHorizontal() {
     return const AppSpacer(
       size: AppSpacerSize.medium,
@@ -137,7 +137,7 @@ extension AppSpacerFactory on AppSpacer {
     );
   }
 
-  /// Creates large horizontal spacing (24px)
+  /// Crea espaciado horizontal grande (24px)
   static Widget largeHorizontal() {
     return const AppSpacer(
       size: AppSpacerSize.large,
@@ -145,7 +145,7 @@ extension AppSpacerFactory on AppSpacer {
     );
   }
 
-  /// Creates extra large horizontal spacing (32px)
+  /// Crea espaciado horizontal extra grande (32px)
   static Widget extraLargeHorizontal() {
     return const AppSpacer(
       size: AppSpacerSize.extraLarge,
@@ -153,7 +153,7 @@ extension AppSpacerFactory on AppSpacer {
     );
   }
 
-  /// Creates huge horizontal spacing (48px)
+  /// Crea espaciado horizontal enorme (48px)
   static Widget hugeHorizontal() {
     return const AppSpacer(
       size: AppSpacerSize.huge,
@@ -161,7 +161,7 @@ extension AppSpacerFactory on AppSpacer {
     );
   }
 
-  /// Creates a flexible spacer that expands to fill available space
+  /// Crea un espaciador flexible que se expande para llenar el espacio disponible
   static Widget flexible({int flex = 1}) {
     return Expanded(
       flex: flex,
@@ -170,7 +170,7 @@ extension AppSpacerFactory on AppSpacer {
   }
 }
 
-/// Enum defining different spacing sizes available in the design system
+/// Enum que define los diferentes tamaños de espaciado disponibles en el sistema de diseño
 enum AppSpacerSize {
   extraSmall, // 4px
   small,      // 8px
@@ -180,7 +180,7 @@ enum AppSpacerSize {
   huge,       // 48px
 }
 
-/// Enum defining spacing direction
+/// Enum que define la dirección del espaciado
 enum AppSpacerDirection {
   horizontal,
   vertical,

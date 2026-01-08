@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// AppTextTheme - Centralized typography system for the design system
+/// AppTextTheme - Sistema de tipografía centralizado para el sistema de diseño
 ///
 /// This module provides a consistent, Material 3 compliant text theme that
 /// adapts automatically to light and dark color schemes. The typography system

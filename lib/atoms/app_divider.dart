@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-/// AppDivider - A consistent divider widget for separating content
-/// This atom provides standardized visual separation between UI elements
-/// Supports both horizontal and vertical orientations with customization
+/// AppDivider - Un widget divisor consistente para separar contenido
+/// Este átomo proporciona separación visual estandarizada entre elementos de UI
+/// Soporta orientaciones horizontales y verticales con personalización
 class AppDivider extends StatelessWidget {
   const AppDivider({
     super.key,
@@ -47,7 +47,7 @@ class AppDivider extends StatelessWidget {
       );
     }
 
-    // Apply margin if provided
+    // Aplicar margen si se proporciona
     if (margin != null) {
       divider = Padding(
         padding: margin!,
@@ -59,9 +59,9 @@ class AppDivider extends StatelessWidget {
   }
 }
 
-/// Factory constructors for common divider use cases
+/// Constructores factory para casos de uso comunes de divisores
 extension AppDividerFactory on AppDivider {
-  /// Creates a thin horizontal divider
+  /// Crea un divisor horizontal delgado
   static Widget thin({
     Color? color,
     EdgeInsetsGeometry? margin,
@@ -78,7 +78,7 @@ extension AppDividerFactory on AppDivider {
     );
   }
 
-  /// Creates a thick horizontal divider
+  /// Crea un divisor horizontal grueso
   static Widget thick({
     Color? color,
     EdgeInsetsGeometry? margin,
@@ -95,7 +95,7 @@ extension AppDividerFactory on AppDivider {
     );
   }
 
-  /// Creates a vertical divider for separating content horizontally
+  /// Crea un divisor vertical para separar contenido horizontalmente
   static Widget vertical({
     double? thickness,
     Color? color,
@@ -113,7 +113,7 @@ extension AppDividerFactory on AppDivider {
     );
   }
 
-  /// Creates a section divider with standard margin
+  /// Crea un divisor de sección con margen estándar
   static Widget section({
     Color? color,
     double thickness = 1.0,
@@ -126,7 +126,7 @@ extension AppDividerFactory on AppDivider {
     );
   }
 
-  /// Creates a list item divider with padding
+  /// Crea un divisor de elemento de lista con padding
   static Widget listItem({
     Color? color,
     double indent = 16,
@@ -142,7 +142,7 @@ extension AppDividerFactory on AppDivider {
   }
 }
 
-/// Enum defining divider orientation
+/// Enum que define la orientación del divisor
 enum AppDividerOrientation {
   horizontal,
   vertical,

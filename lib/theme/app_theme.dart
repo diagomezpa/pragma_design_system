@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'app_color_scheme.dart';
 import 'app_text_theme.dart';
 
-/// AppTheme - Complete theme assembly for the design system
+/// AppTheme - Ensamblaje completo del tema para el sistema de diseño
 ///
 /// This class provides fully configured ThemeData instances that bring together
 /// all design system components into cohesive light and dark themes. It serves

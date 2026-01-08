@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
 
-/// AppColorScheme - Centralized Material 3 ColorScheme factory
+/// AppColorScheme - Fábrica centralizada de `ColorScheme` de Material 3
 ///
 /// This module bridges our semantic design tokens (AppColors) with Flutter's
 /// Material 3 ColorScheme system. By centralizing ColorScheme creation here,

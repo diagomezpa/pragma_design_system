@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:pragma_design_system/pragma_design_system.dart';
 
-/// ShowcaseListItem - A reusable list item widget for navigating to showcase pages.
+/// ShowcaseListItem - Un elemento de lista reutilizable para navegar a las páginas de showcase.
 ///
 /// This widget is specifically designed for the example application and is NOT
 /// part of the design system. It provides a consistent interface for displaying
-/// showcase items across different categories (Molecules, Organisms, Templates, Pages).
+/// elementos de showcase a través de diferentes categorías (Molecules, Organisms, Templates, Pages).
 ///
 /// The widget encapsulates the common pattern of displaying a title, description,
-/// icon, and navigation behavior used throughout the showcase list screens.
+/// icono y comportamiento de navegación usados en las pantallas de la lista de showcase.
 ///
 /// Usage:
 /// ```dart
@@ -26,11 +26,11 @@ import 'package:pragma_design_system/pragma_design_system.dart';
 /// - TemplatesListPage
 /// - And other showcase list screens in the example app
 class ShowcaseListItem extends StatelessWidget {
-  /// Creates a showcase list item widget.
+  /// Crea un widget elemento de lista para showcase.
   ///
   /// All parameters are required:
-  /// - [title]: The display name of the showcase item
-  /// - [description]: A brief description of what the showcase demonstrates
+  /// - [title]: El nombre a mostrar del elemento de showcase
+  /// - [description]: Una breve descripción de lo que el showcase demuestra
   /// - [icon]: The icon to display alongside the title
   /// - [page]: The destination widget to navigate to when tapped
   const ShowcaseListItem({
@@ -41,10 +41,10 @@ class ShowcaseListItem extends StatelessWidget {
     required this.page,
   });
 
-  /// The display title of the showcase item
+  /// El título a mostrar del elemento de showcase
   final String title;
 
-  /// A brief description of what the showcase demonstrates
+  /// Una breve descripción de lo que el showcase demuestra
   final String description;
 
   /// The icon to display alongside the title

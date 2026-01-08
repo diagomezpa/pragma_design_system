@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pragma_design_system/pragma_design_system.dart';
 
-/// AppProductListItemShowcase - Demonstrates various `AppProductListItem` variants.
+/// AppProductListItemShowcase - Demuestra varias variantes de `AppProductListItem`.
 ///
-/// This page showcases different configurations and use cases of the AppProductListItem organism.
-/// It demonstrates how the organism can be used in real e-commerce scenarios with different
-/// combinations of product information and actions.
+/// Esta página muestra diferentes configuraciones y casos de uso del organismo AppProductListItem.
+/// Demuestra cómo puede usarse en escenarios reales de comercio electrónico con distintas
+/// combinaciones de información de producto y acciones.
 class AppProductListItemShowcase extends StatelessWidget {
   const AppProductListItemShowcase({super.key});
 

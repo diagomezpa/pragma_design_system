@@ -14,25 +14,25 @@ class AppProductListItem extends StatelessWidget {
     this.isEnabled = true,
   });
 
-  /// Product title (required) - displayed as the main heading
+  /// Título del producto (requerido) - mostrado como el encabezado principal
   final String title;
 
-  /// Product subtitle/description (optional) - displayed below title
+  /// Subtítulo/descripcion del producto (opcional) - mostrado debajo del título
   final String? subtitle;
 
-  /// Product image URL (optional) - displayed as leading visual element
+  /// URL de la imagen del producto (opcional) - mostrada como elemento visual principal
   final String? imageUrl;
 
-  /// Product price (optional) - displayed with emphasis below description
+  /// Precio del producto (opcional) - mostrado con énfasis debajo de la descripción
   final String? price;
 
-  /// Optional trailing widget (buttons, icons) for product actions
+  /// Widget opcional al final (botones, íconos) para acciones del producto
   final Widget? trailingAction;
 
-  /// Callback fired when the product item is tapped
+  /// Callback que se dispara cuando se pulsa el elemento de producto
   final VoidCallback? onTap;
 
-  /// Whether the product item is enabled for interaction
+  /// Indica si el elemento de producto está habilitado para interacción
   final bool isEnabled;
 
   @override

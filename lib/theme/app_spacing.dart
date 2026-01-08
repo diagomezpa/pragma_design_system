@@ -1,4 +1,4 @@
-/// AppSpacing - Consistent spacing tokens for the design system
+/// AppSpacing - Tokens de espaciado consistentes para el sistema de diseño
 ///
 /// This class provides a centralized spacing system that eliminates magic numbers
 /// and ensures visual consistency across all components and layouts. By defining
@@ -30,7 +30,7 @@
 /// - **lg**: Larger separation for distinct content sections
 /// - **xl**: Maximum spacing for major layout divisions
 ///
-/// **Usage Examples:**
+/// **Ejemplos de uso:**
 /// ```dart
 /// // Component padding
 /// Container(

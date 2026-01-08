@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pragma_design_system/pragma_design_system.dart';
 
-/// AppFormSectionShowcase - Demonstrates various `AppFormSection` variants.
+/// AppFormSectionShowcase - Demuestra varias variantes de `AppFormSection`.
 ///
-/// This page showcases different configurations and use cases of the AppFormSection organism.
-/// It demonstrates how the organism can be used to structure forms with proper spacing,
-/// titles, descriptions, and visual separation.
+/// Esta página muestra diferentes configuraciones y casos de uso del organismo AppFormSection.
+/// Demuestra cómo puede usarse para estructurar formularios con espaciado adecuado,
+/// títulos, descripciones y separación visual.
 class AppFormSectionShowcase extends StatelessWidget {
   const AppFormSectionShowcase({super.key});
 

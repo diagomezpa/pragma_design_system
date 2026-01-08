@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-/// AppImage - An image widget abstraction with network support
-/// This atom provides consistent image handling across the application
-/// Supports both network and asset images with loading and error states
+/// AppImage - Una abstracción de widget de imagen con soporte de red
+/// Este átomo proporciona manejo consistente de imágenes en toda la aplicación
+/// Soporta imágenes de red y assets con estados de carga y error
 class AppImage extends StatelessWidget {
   const AppImage({
     super.key,
@@ -36,7 +36,7 @@ class AppImage extends StatelessWidget {
     Widget imageWidget;
 
     if (assetPath != null) {
-      // Asset image
+      // Imagen de asset
       imageWidget = Image.asset(
         assetPath!,
         width: width,
@@ -48,7 +48,7 @@ class AppImage extends StatelessWidget {
         },
       );
     } else {
-      // Network image
+      // Imagen de red
       imageWidget = Image.network(
         imageUrl!,
         width: width,
@@ -65,7 +65,7 @@ class AppImage extends StatelessWidget {
       );
     }
 
-    // Apply border radius if provided
+    // Aplicar border radius si se proporciona
     if (borderRadius != null) {
       imageWidget = ClipRRect(
         borderRadius: borderRadius!,
@@ -115,9 +115,9 @@ class AppImage extends StatelessWidget {
   }
 }
 
-/// Factory constructors for common image use cases
+/// Constructores factory para casos de uso comunes de imágenes
 extension AppImageFactory on AppImage {
-  /// Creates a circular avatar image
+  /// Crea una imagen de avatar circular
   static Widget avatar({
     required String? imageUrl,
     required double size,
@@ -140,7 +140,7 @@ extension AppImageFactory on AppImage {
     );
   }
 
-  /// Creates a thumbnail image with rounded corners
+  /// Crea una imagen de miniatura con esquinas redondeadas
   static Widget thumbnail({
     required String? imageUrl,
     String? assetPath,
@@ -164,7 +164,7 @@ extension AppImageFactory on AppImage {
     );
   }
 
-  /// Creates a banner image that fills the available width
+  /// Crea una imagen de banner que llena el ancho disponible
   static Widget banner({
     required String? imageUrl,
     String? assetPath,

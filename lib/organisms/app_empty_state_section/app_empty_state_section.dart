@@ -9,24 +9,24 @@ import '../../atoms/app_text.dart';
 
 /// AppEmptyStateSection
 ///
-/// An organism that displays a self-contained, presentation-only empty state
-/// for a section that has no content. This widget is stateless and fully
-/// configurable via constructor parameters — it does not perform any data
-/// fetching or business logic.
+/// Un organismo que muestra un estado vacío autocontenido y solo de presentación
+/// para una sección que no tiene contenido. Este widget es stateless y totalmente
+/// configurable mediante parámetros del constructor — no realiza peticiones de
+/// datos ni lógica de negocio.
 ///
-/// Features:
-/// - Optional icon (`icon`) or image (`imageUrl`) — mutually exclusive.
-/// - Required `title` and optional `description`.
-/// - Optional `primaryAction` and `secondaryAction` widgets. Actions are
-///   stacked vertically with spacing.
-/// - Uses `AppText`, `AppSpacer`, `AppButton` (passed in as widgets), and
-///   `AppImage` to remain consistent with the design system.
-/// - Centered layout by default; main axis alignment and text alignment
-///   are configurable.
-/// - Responsive: constrains content width for large screens and adapts to
-///   available space.
+/// Características:
+/// - Icono opcional (`icon`) o imagen (`imageUrl`) — mutuamente excluyentes.
+/// - `title` requerido y `description` opcional.
+/// - `primaryAction` y `secondaryAction` opcionales. Las acciones se apilan
+///   verticalmente con espaciado.
+/// - Usa `AppText`, `AppSpacer`, `AppButton` (pasado como widget) y `AppImage`
+///   para mantener coherencia con el sistema de diseño.
+/// - Layout centrado por defecto; la alineación del eje principal y del texto
+///   son configurables.
+/// - Responsive: restringe el ancho del contenido en pantallas grandes y se
+///   adapta al espacio disponible.
 ///
-/// Example:
+/// Ejemplo:
 /// ```dart
 /// AppEmptyStateSection(
 ///   icon: Icons.folder_open,

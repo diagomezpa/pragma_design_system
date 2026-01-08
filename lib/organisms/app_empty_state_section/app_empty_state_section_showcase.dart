@@ -7,9 +7,9 @@ import 'app_empty_state_section.dart';
 
 /// AppEmptyStateSectionShowcase
 ///
-/// A comprehensive showcase demonstrating different configurations and use cases
-/// of the AppEmptyStateSection organism. This serves as both visual documentation
-/// and a testing ground for the component's various states and properties.
+/// Un showcase completo que demuestra diferentes configuraciones y casos de uso
+/// del organismo AppEmptyStateSection. Sirve tanto como documentación visual
+/// como campo de pruebas para los distintos estados y propiedades del componente.
 class AppEmptyStateSectionShowcase extends StatelessWidget {
   const AppEmptyStateSectionShowcase({super.key});
 

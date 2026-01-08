@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-/// AppButton - A reusable button widget that provides consistent styling
-/// This atom centralizes button behavior and appearance across the application
-/// Supports different button variants and states
+/// AppButton - Un widget de botón reutilizable que proporciona estilo consistente
+/// Este átomo centraliza el comportamiento y apariencia de los botones en toda la aplicación
+/// Soporta diferentes variantes y estados de botón
 class AppButton extends StatelessWidget {
   const AppButton({
     super.key,
@@ -27,7 +27,7 @@ class AppButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     
-    // Determine if button should be disabled
+    // Determinar si el botón debe estar deshabilitado
     final bool isDisabled = !isEnabled || isLoading || onPressed == null;
     
     return SizedBox(
@@ -153,7 +153,7 @@ class AppButton extends StatelessWidget {
   }
 }
 
-/// Enum defining different button variants available in the design system
+/// Enum que define las diferentes variantes de botón disponibles en el sistema de diseño
 enum AppButtonVariant {
   primary,
   secondary,
@@ -161,7 +161,7 @@ enum AppButtonVariant {
   text,
 }
 
-/// Enum defining different button sizes available in the design system
+/// Enum que define los diferentes tamaños de botón disponibles en el sistema de diseño
 enum AppButtonSize {
   small,
   medium,

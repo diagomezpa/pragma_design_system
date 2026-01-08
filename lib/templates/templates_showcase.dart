@@ -1,6 +1,6 @@
-/// Barrel file exporting all template showcase pages
+/// Archivo barrel que exporta todas las páginas de showcase de plantillas
 ///
-/// Import this file to access all template showcase screens used in the
+/// Importa este archivo para acceder a todas las pantallas de showcase de plantillas usadas en la
 /// example app and documentation pages.
 export 'templates_list_page.dart';
 export 'product_list/product_list_template_showcase.dart';
