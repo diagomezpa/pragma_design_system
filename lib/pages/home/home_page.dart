@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pragma_design_system/pages/other_pages/other_pages_list_pages.dart';
 import 'package:pragma_design_system/pragma_design_system.dart';
+import '../../feedback/app_snackbar_showcase.dart';
+import '../../feedback/feedback_demo.dart';
+import '../../feedback/practical_feedback_example.dart';
 
 import '../molecules/molecules_list_page.dart';
 import '../organisms/organisms_list_page.dart';
@@ -71,6 +74,40 @@ class HomePage extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           ..._buildNavigationList(),
+          
+          const SizedBox(height: 32),
+          
+          // Utilities Section
+          const AppText(
+            'System Utilities',
+            variant: AppTextVariant.titleLarge,
+          ),
+          const SizedBox(height: 8),
+          const AppText(
+            'Test system-level utilities and feedback mechanisms.',
+            variant: AppTextVariant.bodyMedium,
+          ),
+          const SizedBox(height: 24),
+          ShowcaseListItem(
+            title: 'Feedback System',
+            description: 'Test temporal feedback messages with success, error, and info variants',
+            icon: Icons.feedback_outlined,
+            page: const AppSnackbarShowcase(),
+          ),
+          const SizedBox(height: 16),
+          ShowcaseListItem(
+            title: 'Quick Feedback Demo',
+            description: 'Simple demo to quickly test the three feedback types',
+            icon: Icons.play_circle_outline,
+            page: const FeedbackDemo(),
+          ),
+          const SizedBox(height: 16),
+          ShowcaseListItem(
+            title: 'Practical Example',
+            description: 'Real-world login form showing feedback integration',
+            icon: Icons.assignment_outlined,
+            page: const PracticalFeedbackExample(),
+          ),
         ],
       ),
     );

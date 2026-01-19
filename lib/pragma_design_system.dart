@@ -20,6 +20,13 @@ export 'atoms/app_spacer.dart';
 // Export themes (when implemented)
 // export 'theme/app_theme.dart';
 
+// Export feedback utilities
+export 'feedback/app_snackbar.dart';
+export 'feedback/app_snackbar_type.dart';
+export 'feedback/app_snackbar_showcase.dart';
+export 'feedback/feedback_demo.dart';
+export 'feedback/practical_feedback_example.dart';
+
 // Export molecules
 export 'molecules/form_field/app_form_field.dart';
 export 'molecules/app_section/app_section.dart';
