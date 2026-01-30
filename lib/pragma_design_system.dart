@@ -20,6 +20,9 @@ export 'atoms/app_spacer.dart';
 // Export themes (when implemented)
 // export 'theme/app_theme.dart';
 
+// Export layout components
+
+
 // Export feedback utilities
 export 'feedback/app_snackbar.dart';
 export 'feedback/app_snackbar_type.dart';
@@ -43,13 +46,13 @@ export 'organisms/app_card_list/app_card_list.dart';
 export 'organisms/app_empty_state_section/app_empty_state_section.dart';
 export 'organisms/app_settings_group/app_settings_group.dart';
 
-
 // Export templates (when implemented)
 // export 'templates/templates.dart';
 export 'templates/product_list/product_list_template.dart';
 export 'templates/form_pages/form_page_template.dart';
 export 'templates/empty_state_dashboard/empty_state_dashboard_template.dart';
 export 'templates/settings_page/settings_page_template.dart';
+export 'templates/app_page/app_page.dart';
 
 // Export pages (when implemented)
 export 'pages/home/home_page.dart';

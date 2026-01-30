@@ -292,16 +292,20 @@ class _FormPageState extends State<FormPage> {
           title: const Text('Discard Changes'),
           content: const Text('Are you sure you want to discard your changes?'),
           actions: [
-            TextButton(
+            AppButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: const Text('Cancel'),
+              text: 'Cancel',
+              variant: AppButtonVariant.text,
+              size: AppButtonSize.medium,
             ),
-            TextButton(
+            AppButton(
               onPressed: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).pop();
               },
-              child: const Text('Discard'),
+              text: 'Discard',
+              variant: AppButtonVariant.text,
+              size: AppButtonSize.medium,
             ),
           ],
         ),

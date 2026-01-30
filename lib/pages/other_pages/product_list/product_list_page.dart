@@ -79,14 +79,11 @@ class _ProductListPageState extends State<ProductListPage> {
         title: const Text('Product List Page'),
         centerTitle: true,
         actions: [
-          TextButton(
+          AppButton(
             onPressed: _toggleProductsState,
-            child: Text(
-              hasProducts ? 'Clear' : 'Show',
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.onPrimary,
-              ),
-            ),
+            text: hasProducts ? 'Clear' : 'Show',
+            variant: AppButtonVariant.text,
+            size: AppButtonSize.medium,
           ),
         ],
       ),
