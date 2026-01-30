@@ -286,29 +286,30 @@ class _FormPageState extends State<FormPage> {
         _usernameController.text.isNotEmpty;
 
     if (hasData) {
-      showDialog<void>(
+      AppDialog.show<void>(
         context: context,
-        builder: (context) => AlertDialog(
-          title: const Text('Discard Changes'),
-          content: const Text('Are you sure you want to discard your changes?'),
-          actions: [
-            AppButton(
-              onPressed: () => Navigator.of(context).pop(),
-              text: 'Cancel',
-              variant: AppButtonVariant.text,
-              size: AppButtonSize.medium,
-            ),
-            AppButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-                Navigator.of(context).pop();
-              },
-              text: 'Discard',
-              variant: AppButtonVariant.text,
-              size: AppButtonSize.medium,
-            ),
-          ],
+        title: 'Discard Changes',
+        content: const AppText(
+          'Are you sure you want to discard your changes?',
+          variant: AppTextVariant.bodyMedium,
         ),
+        actions: [
+          AppButton(
+            onPressed: () => Navigator.of(context).pop(),
+            text: 'Cancel',
+            variant: AppButtonVariant.text,
+            size: AppButtonSize.medium,
+          ),
+          AppButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+              Navigator.of(context).pop();
+            },
+            text: 'Discard',
+            variant: AppButtonVariant.text,
+            size: AppButtonSize.medium,
+          ),
+        ],
       );
     } else {
       Navigator.of(context).pop();

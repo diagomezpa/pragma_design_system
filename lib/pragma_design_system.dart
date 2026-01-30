@@ -24,6 +24,8 @@ export 'atoms/app_spacer.dart';
 
 
 // Export feedback utilities
+export 'feedback/app_dialog.dart';
+export 'feedback/app_dialog_demo.dart';
 export 'feedback/app_snackbar.dart';
 export 'feedback/app_snackbar_type.dart';
 export 'feedback/app_snackbar_showcase.dart';

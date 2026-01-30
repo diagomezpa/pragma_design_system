@@ -19,7 +19,7 @@ class AppSemanticIcons {
   // Search related icons
   static const IconData search = Icons.search;
   static const IconData searchOutlined = Icons.search_outlined;
-  static const IconData searchOff = Icons.search_off_outlined;
+  static const IconData searchOff = Icons.search_off;
   static const IconData clear = Icons.clear;
 
   // Navigation icons
@@ -41,11 +41,11 @@ class AppSemanticIcons {
   static const IconData add = Icons.add;
   static const IconData remove = Icons.remove;
   static const IconData edit = Icons.edit;
-  static const IconData delete = Icons.delete_outline;
+  static const IconData delete = Icons.delete;
   static const IconData settings = Icons.settings;
 
   // Store/catalog icons
-  static const IconData store = Icons.store_outlined;
+  static const IconData store = Icons.store;
   static const IconData gridView = Icons.grid_view;
   static const IconData filterList = Icons.filter_list;
   static const IconData filterListOff = Icons.filter_list_off;
