@@ -31,8 +31,13 @@ class AppButton extends StatelessWidget {
     final bool isDisabled = !isEnabled || isLoading || onPressed == null;
     
     return SizedBox(
-      height: _getButtonHeight(),
-      width: size == AppButtonSize.extraSmall ? _getButtonHeight() : null, // Hacer cuadrado para extraSmall
+      // Solo aplicar restricciones de tamaño para extraSmall con icono
+      height: (size == AppButtonSize.extraSmall && icon != null && text.isEmpty) 
+          ? _getButtonHeight() 
+          : null,
+      width: (size == AppButtonSize.extraSmall && icon != null && text.isEmpty) 
+          ? _getButtonHeight() 
+          : null,
       child: ElevatedButton(
         onPressed: isDisabled ? null : onPressed,
         style: _getButtonStyle(theme),
