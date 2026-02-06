@@ -87,6 +87,13 @@ class AppColors {
   /// Provides gentle visual separation without being intrusive.
   final Color outline;
 
+  /// Static getters for commonly used colors from light theme
+  /// These provide direct access to light theme colors for convenience
+  static Color get defaultError => light.error;
+  static Color get defaultPrimary => light.primary;
+  static Color get defaultSecondary => light.secondary;
+  static Color get defaultSurface => light.surface;
+
   /// Light theme color scheme optimized for fintech applications.
   /// Features clean, professional colors with high contrast ratios.
   /// Primary color uses a trustworthy blue suitable for financial apps.

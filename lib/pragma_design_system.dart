@@ -17,8 +17,10 @@ export 'atoms/app_image.dart';
 export 'atoms/app_divider.dart';
 export 'atoms/app_spacer.dart';
 
-// Export themes (when implemented)
-// export 'theme/app_theme.dart';
+// Export themes
+export 'theme/app_colors.dart';
+export 'theme/app_color_scheme.dart';
+export 'theme/app_theme.dart';
 
 // Export layout components
 
