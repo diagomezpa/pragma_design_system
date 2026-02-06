@@ -32,6 +32,7 @@ class AppButton extends StatelessWidget {
     
     return SizedBox(
       height: _getButtonHeight(),
+      width: size == AppButtonSize.extraSmall ? _getButtonHeight() : null, // Hacer cuadrado para extraSmall
       child: ElevatedButton(
         onPressed: isDisabled ? null : onPressed,
         style: _getButtonStyle(theme),
@@ -53,6 +54,11 @@ class AppButton extends StatelessWidget {
     }
 
     if (icon != null) {
+      // Para extraSmall, solo mostrar icono sin texto
+      if (size == AppButtonSize.extraSmall) {
+        return Icon(icon, size: _getIconSize());
+      }
+      
       return Row(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -110,6 +116,8 @@ class AppButton extends StatelessWidget {
 
   EdgeInsets _getPadding() {
     switch (size) {
+      case AppButtonSize.extraSmall:
+        return const EdgeInsets.symmetric(horizontal: 0, vertical: 4);
       case AppButtonSize.small:
         return const EdgeInsets.symmetric(horizontal: 12, vertical: 8);
       case AppButtonSize.medium:
@@ -121,6 +129,8 @@ class AppButton extends StatelessWidget {
 
   double _getButtonHeight() {
     switch (size) {
+      case AppButtonSize.extraSmall:
+        return 24;
       case AppButtonSize.small:
         return 32;
       case AppButtonSize.medium:
@@ -132,6 +142,8 @@ class AppButton extends StatelessWidget {
 
   double _getIconSize() {
     switch (size) {
+      case AppButtonSize.extraSmall:
+        return 14;
       case AppButtonSize.small:
         return 16;
       case AppButtonSize.medium:
@@ -143,6 +155,8 @@ class AppButton extends StatelessWidget {
 
   TextStyle _getTextStyle() {
     switch (size) {
+      case AppButtonSize.extraSmall:
+        return const TextStyle(fontSize: 10, fontWeight: FontWeight.w500);
       case AppButtonSize.small:
         return const TextStyle(fontSize: 12, fontWeight: FontWeight.w500);
       case AppButtonSize.medium:
@@ -163,6 +177,7 @@ enum AppButtonVariant {
 
 /// Enum que define los diferentes tamaños de botón disponibles en el sistema de diseño
 enum AppButtonSize {
+  extraSmall,
   small,
   medium,
   large,
