@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../atoms/app_button.dart';
-import '../../atoms/app_spacer.dart';
-import '../../atoms/app_text.dart';
+import '../../atoms/app_button/app_button.dart';
+import '../../atoms/app_spacer/app_spacer.dart';
+import '../../atoms/app_text/app_text.dart';
 import '../../organisms/app_empty_state_section/app_empty_state_section.dart';
 import 'empty_state_dashboard_template.dart';
 

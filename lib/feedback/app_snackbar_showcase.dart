@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../atoms/app_text.dart';
-import '../atoms/app_button.dart';
-import '../atoms/app_spacer.dart';
+import '../atoms/app_text/app_text.dart';
+import '../atoms/app_button/app_button.dart';
+import '../atoms/app_spacer/app_spacer.dart';
 import '../molecules/app_section/app_section.dart';
 import 'app_snackbar.dart';
 

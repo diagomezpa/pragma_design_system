@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../atoms/app_button.dart';
-import '../../atoms/app_spacer.dart';
-import '../../atoms/app_text.dart';
+import '../../atoms/app_button/app_button.dart';
+import '../../atoms/app_spacer/app_spacer.dart';
+import '../../atoms/app_text/app_text.dart';
 import 'app_empty_state_section.dart';
 
 /// AppEmptyStateSectionShowcase

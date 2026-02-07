@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../atoms/app_text.dart';
-import '../../atoms/app_icon.dart';
-import '../../atoms/app_spacer.dart';
+import '../../atoms/app_text/app_text.dart';
+import '../../atoms/app_icon/app_icon.dart';
+import '../../atoms/app_spacer/app_spacer.dart';
 
 /// AppFormField - A reusable form field molecule following Atomic Design principles
 ///

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../atoms/app_button.dart';
-import '../../atoms/app_icon.dart';
-import '../../atoms/app_spacer.dart';
-import '../../atoms/app_text.dart';
+import '../../atoms/app_button/app_button.dart';
+import '../../atoms/app_icon/app_icon.dart';
+import '../../atoms/app_spacer/app_spacer.dart';
+import '../../atoms/app_text/app_text.dart';
 import '../../molecules/form_field/app_form_field.dart';
 import '../../organisms/app_form_section/app_form_section.dart';
 import 'form_page_template.dart';

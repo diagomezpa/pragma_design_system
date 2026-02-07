@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../atoms/app_text.dart';
-import '../atoms/app_button.dart';
-import '../atoms/app_spacer.dart';
+import '../atoms/app_text/app_text.dart';
+import '../atoms/app_button/app_button.dart';
+import '../atoms/app_spacer/app_spacer.dart';
 
 /// AppDialog - A utility class for displaying modal dialogs with consistent styling
 /// 

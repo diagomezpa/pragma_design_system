@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../atoms/app_spacer.dart';
+import '../../atoms/app_spacer/app_spacer.dart';
 import '../../molecules/app_section/app_section.dart';
 import '../../organisms/app_empty_state_section/app_empty_state_section.dart';
 

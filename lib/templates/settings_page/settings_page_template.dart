@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../atoms/app_spacer.dart';
+import '../../atoms/app_spacer/app_spacer.dart';
 import '../../organisms/app_settings_group/app_settings_group.dart';
 
 /// SettingsPageTemplate

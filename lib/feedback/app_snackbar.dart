@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../atoms/app_text.dart';
+import '../atoms/app_text/app_text.dart';
 import 'app_snackbar_type.dart';
 
 /// AppSnackbar - A utility class for displaying temporary feedback messages

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pragma_design_system/atoms/app_text.dart';
+import '../../atoms/app_text/app_text.dart';
 import 'package:pragma_design_system/pragma_design_system.dart';
 
 

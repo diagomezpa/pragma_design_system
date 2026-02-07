@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../atoms/app_divider.dart';
-import '../../atoms/app_spacer.dart';
-import '../../atoms/app_text.dart';
+import '../../atoms/app_divider/app_divider.dart';
+import '../../atoms/app_spacer/app_spacer.dart';
+import '../../atoms/app_text/app_text.dart';
 
 /// AppSettingsGroup
 ///

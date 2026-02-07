@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../atoms/app_text.dart';
+import '../../atoms/app_text/app_text.dart';
 import '../../molecules/list_item/app_list_item.dart';
 import '../../organisms/app_settings_group/app_settings_group.dart';
 import 'settings_page_template.dart';

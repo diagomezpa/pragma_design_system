@@ -10,12 +10,12 @@
 library pragma_design_system;
 
 // Export all atoms
-export 'atoms/app_text.dart';
-export 'atoms/app_button.dart';
-export 'atoms/app_icon.dart';
-export 'atoms/app_image.dart';
-export 'atoms/app_divider.dart';
-export 'atoms/app_spacer.dart';
+export 'atoms/app_text/app_text.dart';
+export 'atoms/app_button/app_button.dart';
+export 'atoms/app_icon/app_icon.dart';
+export 'atoms/app_image/app_image.dart';
+export 'atoms/app_divider/app_divider.dart';
+export 'atoms/app_spacer/app_spacer.dart';
 
 // Export themes
 export 'theme/app_colors.dart';

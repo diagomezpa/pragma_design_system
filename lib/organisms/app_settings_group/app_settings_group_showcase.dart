@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../atoms/app_icon.dart';
-import '../../atoms/app_spacer.dart';
-import '../../atoms/app_text.dart';
+import '../../atoms/app_icon/app_icon.dart';
+import '../../atoms/app_spacer/app_spacer.dart';
+import '../../atoms/app_text/app_text.dart';
 import '../../molecules/list_item/app_list_item.dart';
 import 'app_settings_group.dart';
 

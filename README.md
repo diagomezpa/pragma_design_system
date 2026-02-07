@@ -1,67 +1,84 @@
 # Pragma Design System
 
-Sistema de diseño Flutter profesional basado en la metodología **Atomic Design**, que proporciona componentes reutilizables, templates consistentes y patrones de páginas escalables para aplicaciones Flutter modernas.
+Un Sistema de Diseño Flutter listo para producción construido sobre principios de **Atomic Design** que garantiza la separación de responsabilidades entre componentes UI, plantillas de layout y lógica de negocio mediante un patrón arquitectónico escalable.
 
-## Introducción
+## Visión Arquitectónica
 
-El **Pragma Design System** es un paquete Flutter que implementa un sistema de diseño completo siguiendo los principios de Atomic Design de Brad Frost. Este sistema facilita la creación de interfaces de usuario consistentes, mantenibles y escalables mediante la composición jerárquica de componentes.
+El Pragma Design System aborda el desafío fundamental de construir interfaces de usuario consistentes y mantenibles a escala. En lugar de crear widgets aislados dispersos por toda la aplicación, este sistema establece un lenguaje unificado para la construcción de interfaces mediante composición predecible de componentes y límites arquitectónicos estrictos.
 
-### Objetivo del Paquete
+### El Problema que Resolvemos
 
-- **Consistencia Visual**: Garantizar una experiencia de usuario uniforme en toda la aplicación
-- **Reutilización**: Maximizar la reutilización de componentes en diferentes contextos
-- **Escalabilidad**: Facilitar el mantenimiento y evolución del sistema de diseño
-- **Separación de Responsabilidades**: Distinguir claramente entre layout (Templates) y lógica de negocio (Pages)
-- **Desarrollo Eficiente**: Acelerar el desarrollo mediante componentes prefabricados y documentados
+Las aplicaciones Flutter modernas sufren de:
+- **Inconsistencia de UI**: Componentes reimplementados de manera diferente en cada funcionalidad
+- **Acoplamiento Estrecho**: Lógica de UI mezclada con lógica de negocio y gestión de datos
+- **Pobre Escalabilidad**: Sin ruta clara para hacer crecer la complejidad del diseño
+- **Overhead de Mantenimiento**: Los cambios requieren tocar múltiples archivos dispersos
 
-## Estructura del Sistema de Diseño
+### Nuestra Solución: Atomic Design + Límites Arquitectónicos
 
-El sistema implementa la metodología **Atomic Design** con cinco niveles jerárquicos:
+Este sistema de diseño implementa una arquitectura de tres capas:
 
-### 🔸 Atoms (Átomos)
-Componentes básicos e indivisibles del sistema de diseño.
-- **AppButton**: Botones interactivos con variantes y estados
-- **AppText**: Componente de texto con tipografía consistente
-- **AppIcon**: Iconografía estandarizada
-- **AppSpacer**: Sistema de espaciado consistente
-- **AppDivider**: Separadores visuales
+1. **Capa de Componentes** (Atoms → Organisms): Componentes UI puros sin lógica de negocio
+2. **Capa de Templates**: Estructuras de layout que definen organización de página sin datos
+3. **Capa de Implementación** (Pages): Lógica de negocio, gestión de estado e integración de datos
 
-### 🔸 Molecules (Moléculas)
-Componentes funcionales compuestos por grupos de átomos.
-- **AppFormField**: Campos de formulario con validación
-- **AppListItem**: Elementos de lista reutilizables
-- **AppEmptyState**: Estados vacíos motivacionales
-- **AppCard**: Contenedores de contenido con elevación
-- **AppSection**: Secciones organizacionales con títulos
+Esta separación garantiza que los componentes permanezcan reutilizables, los templates se mantengan flexibles y la lógica de negocio permanezca aislada.
 
-### 🔸 Organisms (Organismos)
-Componentes complejos que agrupan moléculas para crear secciones funcionales.
-- **AppFormSection**: Agrupación lógica de campos de formulario
-- **AppSettingsGroup**: Grupos organizados de configuraciones
-- **AppEmptyStateSection**: Sección completa de estado vacío
-- **AppProductListItem**: Elemento especializado para productos
-- **AppCardList**: Listas organizadas de tarjetas
+## Atomic Design en la Práctica
 
-### 🔸 Templates (Plantillas)
-Estructuras de página que definen el layout sin lógica de negocio.
-- **FormPageTemplate**: Layout para páginas de formularios
-- **ProductListTemplate**: Layout para listados de productos
-- **SettingsPageTemplate**: Layout para páginas de configuración
-- **EmptyStateDashboardTemplate**: Layout para dashboards vacíos
+En lugar de principios atómicos teóricos, nuestra implementación se enfoca en patrones prácticos de desarrollo Flutter:
 
-### 🔸 Pages (Páginas)
-Implementaciones completas que combinan Templates con datos reales y lógica de negocio.
+### Atoms: Elementos Fundacionales
+Widgets de propósito único que encapsulan tokens de diseño e interacciones básicas. Cada átomo maneja una preocupación específica de UI: tipografía, espaciado, colores o entrada simple del usuario.
 
-## Relación Templates ↔ Pages
+### Molecules: Unidades Funcionales
+Combinaciones de átomos que crean componentes funcionales discretos. Estos manejan interacciones específicas del usuario pero permanecen agnósticos al contexto y sin estado.
 
-- **Templates**: Se enfocan únicamente en la estructura visual y el layout
-- **Pages**: Proporcionan datos reales, gestión de estado y lógica de negocio
-- **Separación Clara**: Los Templates permanecen puros (sin estado), las Pages manejan toda la funcionalidad
+### Organisms: Secciones Complejas
+Secciones de interfaz autocontenidas que combinan moléculas para crear áreas significativas de interfaz de usuario. Representan zonas funcionales completas dentro de una página.
 
-## 📋 Listado Completo de Componentes
+### Templates: Arquitectura de Layout
+Estructuras sin estado que definen estructura de página, espaciado y relaciones entre componentes sin lógica de negocio o dependencias de datos.
 
-### 🔸 **Atoms (Átomos)**
-Componentes fundamentales e indivisibles:
+### Pages: Experiencias Completas
+Implementaciones completas que conectan templates con datos reales, gestión de estado, lógica de navegación y reglas de negocio.
+
+## Cómo Templates y Pages Garantizan Separación de Responsabilidades
+
+El patrón Template/Page es la piedra angular de nuestro enfoque arquitectónico:
+
+### Template: Layout Puro
+```dart
+// FormPageTemplate define solo la estructura
+FormPageTemplate(
+  title: Widget,           // Cualquier widget de título
+  sections: List<Widget>,  // Cualquier sección de formulario
+  primaryAction: Widget?,  // Cualquier botón de acción
+)
+```
+
+### Page: Implementación de Negocio
+```dart
+// FormPage proporciona funcionalidad real
+class FormPage extends StatefulWidget {
+  // Gestión de estado, validación, llamadas a API
+  // Controladores, lógica de formulario, manejo de errores
+  // Decisiones de navegación, persistencia de datos
+}
+```
+
+**Ejemplo Real**: Nuestro `ProductListTemplate` define el layout para cualquier interfaz de lista, mientras que `ProductListPage` proporciona datos reales de productos, funcionalidad de búsqueda y comportamiento de navegación. El template puede reutilizarse para usuarios, órdenes o cualquier otra entidad creando diferentes implementaciones de Page.
+
+**Beneficios**:
+- Los templates permanecen testeable y predecibles
+- Las páginas pueden ser desarrolladas por diferentes equipos
+- Los cambios de layout no afectan la lógica de negocio
+- Los cambios de lógica de negocio no rompen la estructura de UI
+
+## Referencia de Componentes
+
+### Atoms: Capa Fundacional
+Elementos de construcción centrales que encapsulan tokens de diseño y funcionalidad básica:
 
 | Componente | Archivo | Propósito |
 |------------|---------|-----------|
@@ -72,8 +89,8 @@ Componentes fundamentales e indivisibles:
 | **AppDivider** | `app_divider.dart` | Separadores visuales horizontales y verticales |
 | **AppImage** | `app_image.dart` | Componente de imagen con manejo de carga y estados de error |
 
-### 🔸 **Molecules (Moléculas)**
-Componentes funcionales que combinan átomos:
+### Molecules: Componentes Funcionales
+Componentes compuestos que combinan átomos en unidades funcionales cohesivas:
 
 | Componente | Archivo | Propósito |
 |------------|---------|-----------|
@@ -84,8 +101,8 @@ Componentes funcionales que combinan átomos:
 | **AppSection** | `app_section.dart` | Contenedor organizacional con título, descripción y contenido |
 | **AppPrice** | `app_price.dart` | Componente especializado para mostrar precios con formato y moneda |
 
-### 🔸 **Organisms (Organismos)**
-Componentes complejos que agrupan moléculas:
+### Organisms: Secciones de Interfaz
+Componentes complejos que crean secciones de interfaz autocontenidas:
 
 | Componente | Archivo | Propósito |
 |------------|---------|-----------|
@@ -95,8 +112,8 @@ Componentes complejos que agrupan moléculas:
 | **AppProductListItem** | `app_product_list_item.dart` | Elemento especializado para mostrar productos con imagen, precio y acciones |
 | **AppCardList** | `app_card_list.dart` | Lista organizada de tarjetas con spacing consistente y scroll |
 
-### 🔸 **Templates (Plantillas)**
-Estructuras de página que definen layouts:
+### Templates: Arquitectura de Layout
+Estructuras de página sin estado que definen patrones de layout sin lógica de negocio:
 
 | Template | Archivo | Propósito |
 |----------|---------|-----------|
@@ -105,8 +122,8 @@ Estructuras de página que definen layouts:
 | **SettingsPageTemplate** | `settings_page_template.dart` | Layout para páginas de configuración con grupos organizados |
 | **EmptyStateDashboardTemplate** | `empty_state_dashboard_template.dart` | Layout para dashboards vacíos con onboarding |
 
-### 🔸 **Pages (Páginas de Ejemplo)**
-Implementaciones completas que combinan Templates con datos reales:
+### Pages: Implementaciones Completas
+Implementaciones completas de página que combinan templates con lógica de negocio y datos:
 
 | Página | Archivo | Template Usado | Propósito |
 |--------|---------|----------------|-----------|
@@ -116,8 +133,8 @@ Implementaciones completas que combinan Templates con datos reales:
 | **SettingsPage** | `settings_page.dart` | `SettingsPageTemplate` | Página de configuraciones organizadas por grupos funcionales |
 | **EmptyStateDashboardPage** | `empty_state_dashboard_page.dart` | `EmptyStateDashboardTemplate` | Dashboard vacío con onboarding y llamadas a acción |
 
-### 🔸 **Navigation & List Pages**
-Páginas de navegación y catálogos del sistema:
+### Navegación del Sistema
+Estructura de catálogo interactivo y navegación:
 
 | Página | Archivo | Propósito |
 |--------|---------|-----------|
@@ -126,15 +143,15 @@ Páginas de navegación y catálogos del sistema:
 | **TemplatesListPage** | `templates_list_page.dart` | Showcase de plantillas disponibles con previews |
 | **OtherPagesListPage** | `other_pages_list_pages.dart` | Índice de páginas de ejemplo que usan templates reales |
 
-### 🔸 **Shared Components**
-Componentes compartidos para navegación y showcase:
+### Componentes Compartidos
+Infraestructura reutilizable para navegación y demostración:
 
 | Componente | Archivo | Propósito |
 |------------|---------|-----------|
 | **ShowcaseListItem** | `showcase_list_item.dart` | Elemento de lista reutilizable para navegación entre showcases |
 
-### 🔸 **Theme (Sistema de Temas)**
-Tokens de diseño y configuraciones visuales:
+### Fundación del Sistema de Diseño
+Tokens de diseño y configuración de temas que sustentan todos los componentes:
 
 | Componente | Archivo | Propósito |
 |------------|---------|-----------|
@@ -144,7 +161,7 @@ Tokens de diseño y configuraciones visuales:
 | **AppTextTheme** | `app_text_theme.dart` | Sistema tipográfico con jerarquías y weights |
 | **AppSpacing** | `app_spacing.dart` | Tokens de espaciado y sistema de grid |
 
-### 🔸 **Feedback (Sistema de Retroalimentación)**
+### Sistema de Retroalimentación al Usuario
 Utilidades para feedback temporal y notificaciones del sistema:
 
 | Componente | Archivo | Propósito |
@@ -152,59 +169,45 @@ Utilidades para feedback temporal y notificaciones del sistema:
 | **AppSnackbar** | `app_snackbar.dart` | Clase utilitaria para mostrar mensajes temporales de feedback |
 | **AppSnackbarType** | `app_snackbar_type.dart` | Enum que define los tipos semánticos de feedback (success, error, info) |
 
-### 🔸 **Showcase & Navigation**
-Páginas de demostración y navegación del sistema:
+### Documentación Interactiva
+Páginas exhaustivas de showcase y navegación para exploración del sistema:
 
 | Componente | Propósito |
-|------------|-----------|
-| **HomePage** | Navegación principal del sistema de diseño |
-| **AtomsListPage** | Catálogo navegable de todos los átomos |
-| **MoleculesListPage** | Showcase interactivo de moléculas |
-| **OrganismsListPage** | Demostración de organismos complejos |
-| **TemplatesListPage** | Galería de templates disponibles |
-| **Individual Showcases** | Páginas específicas para cada componente con ejemplos de uso |
+|-----------|----------|
+| **HomePage** | Hub de navegación del sistema de diseño y visión arquitectónica |
+| **AtomsListPage** | Catálogo interactivo de componentes fundacionales |
+| **MoleculesListPage** | Demostraciones de componentes funcionales con ejemplos en vivo |
+| **OrganismsListPage** | Showcases de componentes complejos con patrones de interacción |
+| **TemplatesListPage** | Galería de patrones de layout con ejemplos estructurales |
+| **Individual Showcases** | Documentación detallada de componentes con ejemplos de uso |
 
-### 📊 **Estadísticas del Sistema**
+## Métricas del Sistema
 
-- **Total de Componentes**: 21 componentes principales + 10 páginas de ejemplo + 2 utilidades de feedback
-- **Átomos**: 6 componentes fundamentales
-- **Moléculas**: 6 componentes funcionales  
-- **Organismos**: 5 componentes complejos
-- **Templates**: 4 layouts de página
-- **Pages**: 5 páginas de ejemplo completas
-- **Navigation Pages**: 4 páginas de catálogo y navegación
-- **Shared Components**: 1 componente de navegación reutilizable
-- **Sistema de Tema**: 5 módulos de diseño
-- **Sistema de Feedback**: 2 utilidades para retroalimentación temporal
-- **Páginas de Showcase**: +20 páginas de demostración total
+El sistema de diseño proporciona cobertura integral a través de la jerarquía de componentes:
 
-### 🏗️ **Arquitectura Completa**
+- **21 Componentes Centrales** a través de niveles atómicos
+- **4 Templates de Layout** para patrones comunes de página
+- **5 Páginas de Implementación de Referencia**
+- **20+ Páginas de Documentación Interactiva**
+- **Sistema de Temas Completo** con tokens de diseño
+- **Infraestructura de Feedback** para interacciones de usuario
 
-**Flujo de Navegación:**
-1. **HomePage** → Punto de entrada principal
-2. **List Pages** → Catálogos por categoría (Molecules, Organisms, Templates, Pages)
-3. **Individual Showcases** → Demostraciones específicas de cada componente
-4. **Example Pages** → Implementaciones reales usando templates
+## Documentación Interactiva
 
-**Separación de Responsabilidades:**
-- **Components (Atoms → Templates)**: Lógica de UI reutilizable
-- **Pages**: Implementación con datos reales y lógica de negocio
-- **Showcase Pages**: Documentación interactiva
-- **Navigation**: Estructura de exploración del sistema
+La aplicación example sirve como documentación viva del sistema de diseño. En lugar de documentación estática, los desarrolladores pueden:
 
-Cada componente incluye:
-- ✅ Documentación completa con JSDoc
-- ✅ Ejemplos de uso en código
-- ✅ Página de showcase interactiva
-- ✅ Tipado fuerte con TypeScript/Dart
-- ✅ Integración con sistema de temas
-- ✅ Seguimiento de principios de Atomic Design
+- **Explorar Componentes**: Demos interactivos de cada componente con funcionalidad real
+- **Entender Patrones**: Ver cómo los componentes se componen en secciones de interfaz más grandes
+- **Probar Integraciones**: Experimentar cómo los templates y pages trabajan juntos
+- **Validar Consistencia**: Confirmar consistencia visual y de comportamiento a través del sistema
 
-## Uso del Paquete
+Este enfoque asegura que la documentación se mantenga actualizada con la implementación y proporciona guía práctica para el uso de componentes.
+
+## Adopción por Equipos
 
 ### Instalación
 
-Añade el paquete a tu `pubspec.yaml`:
+Añade el sistema de diseño a tu proyecto Flutter:
 
 ```yaml
 dependencies:
@@ -212,179 +215,180 @@ dependencies:
     path: ../pragma_design_system
 ```
 
-### Importación
+### Estrategia de Integración
 
+**1. Comienza con el Sistema de Temas**
 ```dart
 import 'package:pragma_design_system/pragma_design_system.dart';
-```
 
-### Ejemplo de Uso
-
-```dart
-// Uso básico de un átomo
-AppButton(
-  text: 'Confirmar',
-  onPressed: () => print('Botón presionado'),
-  variant: AppButtonVariant.primary,
-)
-
-// Uso de una molécula
-AppFormField(
-  label: 'Email',
-  hintText: 'Ingresa tu email',
-  keyboardType: TextInputType.emailAddress,
-  onChanged: (value) => handleEmailChange(value),
-)
-
-// Sistema de feedback temporal
-AppSnackbar.success(context, message: 'Perfil actualizado exitosamente');
-AppSnackbar.error(context, message: 'Error al conectar con el servidor');
-AppSnackbar.info(context, message: 'Cargando datos del usuario...');
-
-// Uso de un Template en una Page
-class MyFormPage extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return FormPageTemplate(
-      title: AppText('Mi Formulario', variant: AppTextVariant.titleLarge),
-      sections: [
-        AppFormSection(
-          title: 'Información Personal',
-          children: [
-            AppFormField(label: 'Nombre', hintText: 'Tu nombre'),
-            AppFormField(label: 'Email', hintText: 'tu@email.com'),
-          ],
-        ),
-      ],
-      primaryAction: AppButton(
-        text: 'Enviar', 
-        onPressed: () {
-          // Lógica de envío
-          AppSnackbar.success(context, message: 'Formulario enviado correctamente');
-        }
-      ),
+    return MaterialApp(
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      // tu app
     );
   }
 }
+```
+
+**2. Usa Átomos para Elementos UI Consistentes**
+```dart
+// Reemplaza botones inconsistentes con átomos del sistema de diseño
+AppButton(
+  text: 'Enviar',
+  onPressed: handleSubmit,
+  variant: AppButtonVariant.primary,
+)
+
+// Tipografía consistente a través de funcionalidades
+AppText('Perfil de Usuario', variant: AppTextVariant.titleLarge)
+```
+
+**3. Construye con Moléculas para Componentes Complejos**
+```dart
+// Campos de formulario con patrones de validación incorporados
+AppFormField(
+  label: 'Dirección de Email',
+  validator: EmailValidator(),
+  onChanged: updateEmail,
+)
+
+// Items de lista con patrones de interacción consistentes
+AppListItem(
+  title: 'Configuración de Cuenta',
+  trailing: AppIcon(Icons.arrow_forward_ios),
+  onTap: () => navigator.pushSettingsPage(),
+)
+```
+
+**4. Usa Templates para Estructura de Página**
+```dart
+// Separa layout de lógica de negocio
+class UserProfilePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return FormPageTemplate(
+      title: AppText('Editar Perfil'),
+      sections: _buildProfileSections(),
+      primaryAction: _buildSaveButton(),
+    );
+  }
+  
+  // La lógica de negocio permanece en la Page
+  List<Widget> _buildProfileSections() { /* ... */ }
+  Widget _buildSaveButton() { /* ... */ }
 }
 ```
 
-## Aplicación Example / Showcase
+**5. Implementa Patrones de Feedback**
+```dart
+// Feedback consistente del usuario a través de la app
+AppSnackbar.success(context, message: 'Perfil actualizado exitosamente');
+AppSnackbar.error(context, message: 'Fallo en conexión de red');
+AppSnackbar.info(context, message: 'Sincronización en progreso...');
+```
 
-La aplicación example incluye showcases interactivos organizados por niveles de Atomic Design:
+### Flujo de Trabajo de Desarrollo
 
-### Navegación Principal
-- **AtomsListPage**: Catálogo de todos los átomos disponibles
-- **MoleculesListPage**: Demostraciones de moléculas funcionales
-- **OrganismsListPage**: Showcases de organismos complejos
-- **TemplatesListPage**: Ejemplos de templates de página
-- **Other Pages**: Páginas reales implementadas con el sistema
+1. **Revisión de Diseño**: Verifica si los patrones necesarios existen en el sistema de diseño
+2. **Componentes Primero**: Usa componentes existentes antes de construir UI personalizada
+3. **Estrategia de Template**: Usa templates para nuevos layouts de página
+4. **Contribución**: Extiende el sistema de diseño cuando falten patrones
 
-## Pages Showcase - Implementaciones Reales
+### Mejores Prácticas
 
-### HomePage
-**Propósito**: Navegación principal del sistema de diseño
-- Punto de entrada a todos los showcases
-- Demuestra la arquitectura de navegación
-- Organización clara por niveles de Atomic Design
+- **Favorece la Composición**: Combina componentes existentes en lugar de personalizarlos
+- **Respeta Límites**: Mantén lógica de negocio en Pages, no en Templates
+- **Consistencia de Tema**: Usa tokens de diseño en lugar de valores hardcodeados
+- **Documentación Interactiva**: Referencia la app showcase para ejemplos de uso
+
+## Ejemplos de Implementación de Referencia
+
+El sistema de diseño incluye implementaciones completas de página que demuestran la separación adecuada Template/Page:
 
 ### ProductListPage
-**Template**: `ProductListTemplate`
-**Funcionalidad**: 
-- Lista de productos con datos reales
-- Toggle entre estado poblado y estado vacío
-- Gestión de estado a nivel de Page
-- Demuestra cómo las Pages proporcionan datos a Templates
+- **Template**: `ProductListTemplate` - Define estructura de layout de lista
+- **Lógica de Page**: Gestión de datos de productos, funcionalidad de búsqueda, manejo de estado vacío
+- **Demuestra**: Cómo las Pages proporcionan contexto de datos a Templates sin estado
 
-### FormPage
-**Template**: `FormPageTemplate`
-**Funcionalidad**:
-- Formulario completo de registro de usuario
-- Validación en tiempo real
-- Gestión de controladores de texto
-- Dos secciones: Información de Cuenta e Información de Perfil
-- Demuestra separación entre layout (Template) y lógica (Page)
+### FormPage  
+- **Template**: `FormPageTemplate` - Organiza secciones y acciones de formulario
+- **Lógica de Page**: Validación de formulario, gestión de estado, manejo de envío
+- **Demuestra**: Separación limpia entre estructura de layout y lógica de negocio de formulario
 
 ### SettingsPage
-**Template**: `SettingsPageTemplate`
-**Funcionalidad**:
-- Configuraciones organizadas en grupos lógicos
-- Grupos: Perfil, Notificaciones, Privacidad
-- Navegación y callbacks de interacción
-- Demuestra organización de contenido para máxima escaneabilidad
+- **Template**: `SettingsPageTemplate` - Agrupa configuraciones en secciones lógicas
+- **Lógica de Page**: Persistencia de configuraciones, enrutamiento de navegación, preferencias de usuario
+- **Demuestra**: Cómo contenido complejo de página puede organizarse mediante composición de template
 
 ### EmptyStateDashboardPage
-**Template**: `EmptyStateDashboardTemplate`
-**Funcionalidad**:
-- Dashboard en estado vacío para nuevos usuarios
-- Mensajería motivacional y onboarding
-- Llamada a acción clara para engagement
-- Demuestra cómo manejar estados "sin datos"
+- **Template**: `EmptyStateDashboardTemplate` - Patrones de layout de onboarding
+- **Lógica de Page**: Flujo de onboarding de usuario, seguimiento de engagement, enrutamiento de acciones
+- **Demuestra**: Reutilización de template para diferentes contextos de estado vacío
 
-## Principios de Diseño
+## Principios Arquitectónicos
 
-### 1. Reutilización
-Cada componente está diseñado para ser reutilizable en múltiples contextos sin modificaciones.
+**1. Separación de Responsabilidades**
+- Los templates manejan solo estructura de layout
+- Las pages gestionan datos, estado y lógica de negocio
+- Los componentes permanecen agnósticos al contexto y reutilizables
 
-### 2. Separación de Responsabilidades
-- **Templates**: Layout y estructura visual únicamente
-- **Pages**: Datos, estado y lógica de negocio
-- **Componentes**: Funcionalidad específica sin acoplamientos
+**2. Composición Predecible**
+- Los componentes se componen hacia arriba a través de niveles atómicos
+- Cada nivel construye sobre el anterior sin romper encapsulación
+- Interfaces claras entre capas de componentes
 
-### 3. Templates sin Lógica
-Los templates permanecen completamente stateless y libres de lógica de negocio.
+**3. Templates Sin Estado**
+- Todos los templates son widgets sin estado enfocados en layout
+- Sin lógica de negocio, llamadas a API o gestión de estado en templates
+- Los templates pueden ser probados independientemente de preocupaciones de datos
 
-### 4. Pages como Composición Final
-Las Pages representan experiencias de usuario completas que combinan Templates con datos reales.
+**4. Contexto Delimitado**
+- Los componentes operan dentro de límites bien definidos
+- Las dependencias fluyen hacia abajo a través de la jerarquía atómica
+- La lógica de negocio permanece aislada en la capa Page
 
-### 5. Consistencia Visual
-Todos los componentes siguen las mismas convenciones de diseño, espaciado y tipografía.
+**5. Integración de Tokens de Diseño**
+- Todas las propiedades visuales derivan de tokens de diseño centralizados
+- Uso consistente de espaciado, tipografía y color a través de componentes
+- Los cambios de tema se propagan automáticamente a través de la jerarquía de componentes
 
-### 6. Escalabilidad
-La arquitectura permite agregar nuevos componentes y pages sin afectar la estructura existente.
-
-## Cómo Ejecutar el Proyecto
+## Desarrollo Local
 
 ### Prerrequisitos
 - Flutter SDK (versión estable más reciente)
 - Dart SDK
-- Editor compatible (VS Code, Android Studio, IntelliJ)
+- IDE compatible (VS Code, Android Studio, IntelliJ)
 
-### Pasos de Instalación
+### Configuración
 
-1. **Clonar el repositorio**:
+1. **Clonar e instalar dependencias**:
    ```bash
-   git clone [url-del-repositorio]
+   git clone [repository-url]
    cd pragma_design_system
-   ```
-
-2. **Instalar dependencias**:
-   ```bash
    flutter pub get
    ```
 
-3. **Navegar a la aplicación example**:
+2. **Ejecutar la documentación interactiva**:
    ```bash
    cd example
    flutter pub get
-   ```
-
-4. **Ejecutar la aplicación showcase**:
-   ```bash
    flutter run
    ```
 
-### Exploración del Showcase
+### Explorando el Sistema
 
-1. **Inicia desde HomePage**: Navega a través de los diferentes niveles
-2. **Explora Atoms**: Revisa los componentes básicos y sus variantes
-3. **Prueba Molecules**: Interactúa con componentes funcionales
-4. **Analiza Organisms**: Observa la composición de componentes complejos
-5. **Examina Templates**: Comprende las estructuras de layout
-6. **Interactúa con Pages**: Experimenta con implementaciones reales y completas
+1. **Comienza con HomePage**: Navega a través de categorías de componentes
+2. **Revisa Átomos**: Entiende los bloques de construcción fundacionales
+3. **Explora Moléculas**: Ve patrones de componentes funcionales
+4. **Estudia Organismos**: Observa composición de componentes complejos
+5. **Examina Templates**: Entiende arquitectura de layout
+6. **Prueba Pages**: Experimenta implementaciones completas
 
-La aplicación example sirve tanto como documentación interactiva del sistema como validación de que todos los niveles de Atomic Design funcionan correctamente en conjunto.
+La app example demuestra todo el sistema de diseño en acción y sirve como referencia primaria para patrones de implementación.
 
 ---
 
-**Desarrollado como demostración de arquitectura Flutter y sistemas de diseño escalables.**
+**Construido como demostración de arquitectura Flutter escalable y sistemas de diseño listos para producción.**

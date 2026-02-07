@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../atoms/app_text.dart';
-import '../../atoms/app_spacer.dart';
+import '../../atoms/app_text/app_text.dart';
+import '../../atoms/app_spacer/app_spacer.dart';
 
 /// AppListItem - A reusable list item molecule following Atomic Design principles
 ///
