@@ -5,6 +5,7 @@ import '../../feedback/app_snackbar_showcase.dart';
 import '../../feedback/feedback_demo.dart';
 import '../../feedback/practical_feedback_example.dart';
 
+import '../atoms/atoms_list_page.dart';
 import '../molecules/molecules_list_page.dart';
 import '../organisms/organisms_list_page.dart';
 import '../templates/templates_list_page.dart';
@@ -18,12 +19,13 @@ import '../shared/showcase_list_item.dart';
 /// of the example application.
 ///
 /// Navigation Philosophy:
-/// - Users first select a component category (Molecules, Organisms, Templates)
+/// - Users first select a component category (Atoms, Molecules, Organisms, Templates)
 /// - Each category leads to a list page showing all components in that category
 /// - From list pages, users can navigate to individual component showcases
 /// - This hierarchical approach provides clear organization and discovery
 ///
 /// Atomic Design Exploration:
+/// - **Atoms**: Fundamental building blocks that cannot be broken down further
 /// - **Molecules**: Groups of atoms working together as functional units
 /// - **Organisms**: Complex components combining multiple molecules/atoms
 /// - **Templates**: Page-level layout structures and component arrangements
@@ -116,6 +118,12 @@ class HomePage extends StatelessWidget {
   /// Builds the list of navigation items for component categories.
   List<Widget> _buildNavigationList() {
     return [
+      ShowcaseListItem(
+        title: 'Atoms',
+        description: 'Fundamental building blocks that cannot be broken down further without losing function',
+        icon: Icons.grain,
+        page: const AtomsListPage(),
+      ),
       ShowcaseListItem(
         title: 'Molecules',
         description: 'Functional components made from groups of atoms working together',

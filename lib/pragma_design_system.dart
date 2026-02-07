@@ -60,6 +60,7 @@ export 'templates/app_page/app_page.dart';
 
 // Export pages (when implemented)
 export 'pages/home/home_page.dart';
+export 'pages/atoms/atoms_list_page.dart';
 export 'pages/molecules/molecules_list_page.dart';
 export 'pages/other_pages/other_pages_list_pages.dart';
 export 'pages/organisms/organisms_list_page.dart';
