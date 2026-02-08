@@ -141,13 +141,8 @@ class AppListItem extends StatelessWidget {
                     size: AppSpacerSize.medium,
                     direction: AppSpacerDirection.horizontal,
                   ),
-                  SizedBox(
-                    width: 40.0,
-                    height: 40.0,
-                    child: Align(
-                      alignment: Alignment.centerRight,
-                      child: trailing,
-                    ),
+                  Flexible(
+                    child: trailing!,
                   ),
                 ],
               ],

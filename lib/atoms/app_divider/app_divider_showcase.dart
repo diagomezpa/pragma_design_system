@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pragma_design_system/pragma_design_system.dart';
 import 'app_divider.dart';
 
 /// AppDividerShowcase
@@ -7,173 +8,80 @@ import 'app_divider.dart';
 /// This showcase demonstrates all available orientations, thickness variations,
 /// factory methods, and customization options of the AppDivider in a clean,
 /// minimal format suitable for design system documentation.
+/// 
+/// This showcase is built entirely using design system components,
+/// serving as an example of how to create pages using the design system.
 class AppDividerShowcase extends StatelessWidget {
   const AppDividerShowcase({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return AppPage(
+      title: 'AppDivider',
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Header
-            const Text(
-              'AppDivider',
-              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 8),
-            const Text(
-              'Visual separation component for content organization',
-              style: TextStyle(fontSize: 16, color: Colors.grey),
-            ),
-            const SizedBox(height: 40),
+          // Header Section
+          AppSection(
+            title: 'AppDivider',
+            description: 'Visual separation component for content organization',
+            child: AppSpacerFactory.extraSmallVertical(),
+          ),
+          
+          AppSpacerFactory.largeVertical(),
 
-            // Orientations Section
-            ShowcaseSection(
-              title: 'Orientations',
+          // Orientations Section
+          AppSection(
+            title: 'Orientations',
+            child: Column(
               children: [
-                ShowcaseRow(
-                  label: 'Horizontal',
-                  child: Container(
-                    width: 200,
-                    height: 50,
+                _buildShowcaseItem(
+                  'Horizontal',
+                  AppCard(
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text('Content above'),
-                        const AppDivider(
-                          orientation: AppDividerOrientation.horizontal,
+                        const AppText(
+                          'Content above',
+                          variant: AppTextVariant.bodyMedium,
                         ),
-                        const Text('Content below'),
-                      ],
-                    ),
-                  ),
-                ),
-                ShowcaseRow(
-                  label: 'Vertical',
-                  child: Container(
-                    width: 200,
-                    height: 50,
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('Left'),
+                        AppSpacerFactory.smallVertical(),
                         AppDivider(
-                          orientation: AppDividerOrientation.vertical,
+                          orientation: AppDividerOrientation.horizontal,
+                          thickness: 2.0,
+                          color: Theme.of(context).colorScheme.outline,
                         ),
-                        Text('Right'),
+                        AppSpacerFactory.smallVertical(),
+                        const AppText(
+                          'Content below',
+                          variant: AppTextVariant.bodyMedium,
+                        ),
                       ],
                     ),
                   ),
                 ),
-              ],
-            ),
-
-            // Thickness Variations Section
-            ShowcaseSection(
-              title: 'Thickness Variations',
-              children: [
-                ShowcaseRow(
-                  label: 'Thin (0.5px)',
-                  child: Container(
-                    width: 200,
-                    child: const AppDivider(
-                      thickness: 0.5,
-                    ),
-                  ),
-                ),
-                ShowcaseRow(
-                  label: 'Normal (1px)',
-                  child: Container(
-                    width: 200,
-                    child: const AppDivider(
-                      thickness: 1.0,
-                    ),
-                  ),
-                ),
-                ShowcaseRow(
-                  label: 'Thick (2px)',
-                  child: Container(
-                    width: 200,
-                    child: const AppDivider(
-                      thickness: 2.0,
-                    ),
-                  ),
-                ),
-                ShowcaseRow(
-                  label: 'Extra Thick (4px)',
-                  child: Container(
-                    width: 200,
-                    child: const AppDivider(
-                      thickness: 4.0,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-
-            // Factory Methods Section
-            ShowcaseSection(
-              title: 'Factory Methods',
-              children: [
-                ShowcaseRow(
-                  label: 'Thin',
-                  child: Container(
-                    width: 200,
-                    child: AppDividerFactory.thin(),
-                  ),
-                ),
-                ShowcaseRow(
-                  label: 'Thick',
-                  child: Container(
-                    width: 200,
-                    child: AppDividerFactory.thick(),
-                  ),
-                ),
-                ShowcaseRow(
-                  label: 'Vertical',
-                  child: Container(
-                    width: 200,
-                    height: 50,
+                AppSpacerFactory.mediumVertical(),
+                _buildShowcaseItem(
+                  'Vertical',
+                  AppCard(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
                       children: [
-                        const Text('Left'),
-                        AppDividerFactory.vertical(),
-                        const Text('Right'),
-                      ],
-                    ),
-                  ),
-                ),
-                ShowcaseRow(
-                  label: 'Section',
-                  child: Container(
-                    width: 200,
-                    child: Column(
-                      children: [
-                        const Text('Section 1'),
-                        AppDividerFactory.section(),
-                        const Text('Section 2'),
-                      ],
-                    ),
-                  ),
-                ),
-                ShowcaseRow(
-                  label: 'List Item',
-                  child: Container(
-                    width: 200,
-                    child: Column(
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.all(16),
-                          child: Text('List Item 1'),
+                        const AppText(
+                          'Left',
+                          variant: AppTextVariant.bodyMedium,
                         ),
-                        AppDividerFactory.listItem(),
-                        const Padding(
-                          padding: EdgeInsets.all(16),
-                          child: Text('List Item 2'),
+                        AppSpacerFactory.smallHorizontal(),
+                        AppDivider(
+                          orientation: AppDividerOrientation.vertical,
+                          thickness: 2.0,
+                          color: Theme.of(context).colorScheme.outline,
+                        ),
+                        AppSpacerFactory.smallHorizontal(),
+                        const AppText(
+                          'Right',
+                          variant: AppTextVariant.bodyMedium,
                         ),
                       ],
                     ),
@@ -181,238 +89,443 @@ class AppDividerShowcase extends StatelessWidget {
                 ),
               ],
             ),
+          ),
 
-            // Colors Section
-            ShowcaseSection(
-              title: 'Colors',
+          AppSpacerFactory.largeVertical(),
+
+          // Thickness Variations Section
+          AppSection(
+            title: 'Thickness Variations',
+            child: Column(
               children: [
-                ShowcaseRow(
-                  label: 'Default',
-                  child: Container(
-                    width: 200,
-                    child: const AppDivider(),
-                  ),
-                ),
-                ShowcaseRow(
-                  label: 'Primary',
-                  child: Container(
-                    width: 200,
-                    child: AppDivider(
-                      color: Theme.of(context).colorScheme.primary,
+                _buildShowcaseItem(
+                  'Thin (0.5px)',
+                  AppCard(
+                    child: Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(16),
+                      child: Column(
+                        children: [
+                          const AppText('Above', variant: AppTextVariant.bodySmall),
+                          const SizedBox(height: 8),
+                          Container(
+                            width: double.infinity,
+                            height: 2,
+                            color: Colors.red,
+                          ),
+                          const SizedBox(height: 8),
+                          const AppText('Below', variant: AppTextVariant.bodySmall),
+                        ],
+                      ),
                     ),
                   ),
                 ),
-                ShowcaseRow(
-                  label: 'Secondary',
-                  child: Container(
-                    width: 200,
-                    child: AppDivider(
-                      color: Theme.of(context).colorScheme.secondary,
+                AppSpacerFactory.mediumVertical(),
+                _buildShowcaseItem(
+                  'Normal (1px)',
+                  AppCard(
+                    child: Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(16),
+                      child: Column(
+                        children: [
+                          const AppText('Above', variant: AppTextVariant.bodySmall),
+                          const SizedBox(height: 8),
+                          Container(
+                            width: double.infinity,
+                            height: 3,
+                            color: Colors.blue,
+                          ),
+                          const SizedBox(height: 8),
+                          const AppText('Below', variant: AppTextVariant.bodySmall),
+                        ],
+                      ),
                     ),
                   ),
                 ),
-                ShowcaseRow(
-                  label: 'Error',
-                  child: Container(
-                    width: 200,
-                    child: AppDivider(
-                      color: Theme.of(context).colorScheme.error,
+                AppSpacerFactory.mediumVertical(),
+                _buildShowcaseItem(
+                  'Thick (2px)',
+                  AppCard(
+                    child: Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(16),
+                      child: Column(
+                        children: [
+                          const AppText('Above', variant: AppTextVariant.bodySmall),
+                          const SizedBox(height: 8),
+                          Container(
+                            width: double.infinity,
+                            height: 4,
+                            color: Colors.green,
+                          ),
+                          const SizedBox(height: 8),
+                          const AppText('Below', variant: AppTextVariant.bodySmall),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                AppSpacerFactory.mediumVertical(),
+                _buildShowcaseItem(
+                  'Extra Thick (4px)',
+                  AppCard(
+                    child: Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(16),
+                      child: Column(
+                        children: [
+                          const AppText('Above', variant: AppTextVariant.bodySmall),
+                          const SizedBox(height: 8),
+                          Container(
+                            width: double.infinity,
+                            height: 6,
+                            color: Colors.orange,
+                          ),
+                          const SizedBox(height: 8),
+                          const AppText('Below', variant: AppTextVariant.bodySmall),
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ],
             ),
+          ),
 
-            // Indentation Section
-            ShowcaseSection(
-              title: 'Indentation',
-              children: [
-                ShowcaseRow(
-                  label: 'No Indent',
-                  child: Container(
-                    width: 200,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey.withOpacity(0.3)),
-                    ),
-                    child: const AppDivider(
-                      indent: 0,
-                      endIndent: 0,
-                    ),
-                  ),
-                ),
-                ShowcaseRow(
-                  label: 'Start Indent',
-                  child: Container(
-                    width: 200,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey.withOpacity(0.3)),
-                    ),
-                    child: const AppDivider(
-                      indent: 16,
-                      endIndent: 0,
-                    ),
-                  ),
-                ),
-                ShowcaseRow(
-                  label: 'End Indent',
-                  child: Container(
-                    width: 200,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey.withOpacity(0.3)),
-                    ),
-                    child: const AppDivider(
-                      indent: 0,
-                      endIndent: 16,
-                    ),
-                  ),
-                ),
-                ShowcaseRow(
-                  label: 'Both Indent',
-                  child: Container(
-                    width: 200,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey.withOpacity(0.3)),
-                    ),
-                    child: const AppDivider(
-                      indent: 16,
-                      endIndent: 16,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+          AppSpacerFactory.largeVertical(),
 
-            // Margin Section
-            ShowcaseSection(
-              title: 'Margin',
+          // Factory Methods Section
+          AppSection(
+            title: 'Factory Methods',
+            child: Column(
               children: [
-                ShowcaseRow(
-                  label: 'No Margin',
-                  child: Container(
-                    width: 200,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey.withOpacity(0.3)),
-                    ),
+                _buildShowcaseItem(
+                  'Thin',
+                  AppCard(
                     child: Column(
                       children: [
-                        const Text('Content above'),
+                        const AppText('Above', variant: AppTextVariant.bodySmall),
+                        AppSpacerFactory.smallVertical(),
+                        AppDividerFactory.thin(
+                          color: Theme.of(context).colorScheme.outline,
+                        ),
+                        AppSpacerFactory.smallVertical(),
+                        const AppText('Below', variant: AppTextVariant.bodySmall),
+                      ],
+                    ),
+                  ),
+                ),
+                AppSpacerFactory.mediumVertical(),
+                _buildShowcaseItem(
+                  'Thick',
+                  AppCard(
+                    child: Column(
+                      children: [
+                        const AppText('Above', variant: AppTextVariant.bodySmall),
+                        AppSpacerFactory.smallVertical(),
+                        AppDividerFactory.thick(
+                          color: Theme.of(context).colorScheme.outline,
+                        ),
+                        AppSpacerFactory.smallVertical(),
+                        const AppText('Below', variant: AppTextVariant.bodySmall),
+                      ],
+                    ),
+                  ),
+                ),
+                AppSpacerFactory.mediumVertical(),
+                _buildShowcaseItem(
+                  'Vertical',
+                  AppCard(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const AppText(
+                          'Left',
+                          variant: AppTextVariant.bodyMedium,
+                        ),
+                        AppDividerFactory.vertical(
+                          color: Theme.of(context).colorScheme.outline,
+                        ),
+                        const AppText(
+                          'Right',
+                          variant: AppTextVariant.bodyMedium,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                AppSpacerFactory.mediumVertical(),
+                _buildShowcaseItem(
+                  'Section',
+                  AppCard(
+                    child: Column(
+                      children: [
+                        const AppText(
+                          'Section 1',
+                          variant: AppTextVariant.bodyMedium,
+                        ),
+                        AppDividerFactory.section(
+                          color: Theme.of(context).colorScheme.outline,
+                        ),
+                        const AppText(
+                          'Section 2',
+                          variant: AppTextVariant.bodyMedium,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                AppSpacerFactory.mediumVertical(),
+                _buildShowcaseItem(
+                  'List Item',
+                  AppCard(
+                    child: Column(
+                      children: [
+                        AppSpacerFactory.mediumVertical(),
+                        const AppText(
+                          'List Item 1',
+                          variant: AppTextVariant.bodyMedium,
+                        ),
+                        AppSpacerFactory.mediumVertical(),
+                        AppDividerFactory.listItem(
+                          color: Theme.of(context).colorScheme.outline,
+                        ),
+                        AppSpacerFactory.mediumVertical(),
+                        const AppText(
+                          'List Item 2',
+                          variant: AppTextVariant.bodyMedium,
+                        ),
+                        AppSpacerFactory.mediumVertical(),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          AppSpacerFactory.largeVertical(),
+
+          // Colors Section
+          AppSection(
+            title: 'Colors',
+            child: Column(
+              children: [
+                _buildShowcaseItem(
+                  'Default',
+                  AppCard(
+                    child: Column(
+                      children: [
+                        const AppText('Above', variant: AppTextVariant.bodySmall),
+                        AppSpacerFactory.smallVertical(),
+                        AppDivider(
+                          color: Theme.of(context).colorScheme.outline,
+                        ),
+                        AppSpacerFactory.smallVertical(),
+                        const AppText('Below', variant: AppTextVariant.bodySmall),
+                      ],
+                    ),
+                  ),
+                ),
+                AppSpacerFactory.mediumVertical(),
+                _buildShowcaseItem(
+                  'Custom Color',
+                  AppCard(
+                    child: Builder(
+                      builder: (context) => AppDivider(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          AppSpacerFactory.largeVertical(),
+
+          // Indentation Section
+          AppSection(
+            title: 'Indentation',
+            child: Column(
+              children: [
+                _buildShowcaseItem(
+                  'No Indent',
+                  AppCard(
+                    child: Column(
+                      children: [
+                        const AppText('Full width divider', variant: AppTextVariant.bodySmall),
+                        AppSpacerFactory.smallVertical(),
+                        AppDivider(
+                          indent: 0,
+                          endIndent: 0,
+                          thickness: 2.0,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                        AppSpacerFactory.smallVertical(),
+                        const AppText('Goes edge to edge', variant: AppTextVariant.bodySmall),
+                      ],
+                    ),
+                  ),
+                ),
+                AppSpacerFactory.mediumVertical(),
+                _buildShowcaseItem(
+                  'Start Indent',
+                  AppCard(
+                    child: Column(
+                      children: [
+                        const AppText('Indented from left', variant: AppTextVariant.bodySmall),
+                        AppSpacerFactory.smallVertical(),
+                        AppDivider(
+                          indent: 16,
+                          endIndent: 0,
+                          thickness: 2.0,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                        AppSpacerFactory.smallVertical(),
+                        const AppText('16px from start', variant: AppTextVariant.bodySmall),
+                      ],
+                    ),
+                  ),
+                ),
+                AppSpacerFactory.mediumVertical(),
+                _buildShowcaseItem(
+                  'End Indent',
+                  AppCard(
+                    child: Column(
+                      children: [
+                        const AppText('Indented from right', variant: AppTextVariant.bodySmall),
+                        AppSpacerFactory.smallVertical(),
+                        AppDivider(
+                          indent: 0,
+                          endIndent: 16,
+                          thickness: 2.0,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                        AppSpacerFactory.smallVertical(),
+                        const AppText('16px from end', variant: AppTextVariant.bodySmall),
+                      ],
+                    ),
+                  ),
+                ),
+                AppSpacerFactory.mediumVertical(),
+                _buildShowcaseItem(
+                  'Both Indent',
+                  AppCard(
+                    child: Column(
+                      children: [
+                        const AppText('Indented both sides', variant: AppTextVariant.bodySmall),
+                        AppSpacerFactory.smallVertical(),
+                        AppDivider(
+                          indent: 16,
+                          endIndent: 16,
+                          thickness: 2.0,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                        AppSpacerFactory.smallVertical(),
+                        const AppText('16px from both sides', variant: AppTextVariant.bodySmall),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          AppSpacerFactory.largeVertical(),
+
+          // Margin Section
+          AppSection(
+            title: 'Margin',
+            child: Column(
+              children: [
+                _buildShowcaseItem(
+                  'No Margin',
+                  AppCard(
+                    child: Column(
+                      children: [
+                        const AppText(
+                          'Content above',
+                          variant: AppTextVariant.bodyMedium,
+                        ),
+                        AppDivider(
+                          color: Theme.of(context).colorScheme.outline,
+                        ),
+                        const AppText(
+                          'Content below',
+                          variant: AppTextVariant.bodyMedium,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                AppSpacerFactory.mediumVertical(),
+                _buildShowcaseItem(
+                  'Vertical Margin',
+                  AppCard(
+                    child: Column(
+                      children: [
+                        const AppText(
+                          'Content above',
+                          variant: AppTextVariant.bodyMedium,
+                        ),
+                        AppSpacerFactory.mediumVertical(),
                         const AppDivider(),
-                        const Text('Content below'),
+                        AppSpacerFactory.mediumVertical(),
+                        const AppText(
+                          'Content below',
+                          variant: AppTextVariant.bodyMedium,
+                        ),
                       ],
                     ),
                   ),
                 ),
-                ShowcaseRow(
-                  label: 'Vertical Margin',
-                  child: Container(
-                    width: 200,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey.withOpacity(0.3)),
-                    ),
+                AppSpacerFactory.mediumVertical(),
+                _buildShowcaseItem(
+                  'All Margin',
+                  AppCard(
                     child: Column(
                       children: [
-                        const Text('Content above'),
-                        const AppDivider(
-                          margin: EdgeInsets.symmetric(vertical: 16),
+                        AppSpacerFactory.mediumVertical(),
+                        const AppText(
+                          'Content above',
+                          variant: AppTextVariant.bodyMedium,
                         ),
-                        const Text('Content below'),
-                      ],
-                    ),
-                  ),
-                ),
-                ShowcaseRow(
-                  label: 'All Margin',
-                  child: Container(
-                    width: 200,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey.withOpacity(0.3)),
-                    ),
-                    child: Column(
-                      children: [
-                        const Text('Content above'),
-                        const AppDivider(
-                          margin: EdgeInsets.all(16),
+                        AppSpacerFactory.mediumVertical(),
+                        AppDivider(
+                          color: Theme.of(context).colorScheme.outline,
                         ),
-                        const Text('Content below'),
+                        AppSpacerFactory.mediumVertical(),
+                        const AppText(
+                          'Content below',
+                          variant: AppTextVariant.bodyMedium,
+                        ),
+                        AppSpacerFactory.mediumVertical(),
                       ],
                     ),
                   ),
                 ),
               ],
             ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-/// ShowcaseSection
-/// 
-/// A reusable widget for displaying sections in design system documentation.
-/// Handles consistent spacing, title styling, and layout for showcase sections.
-class ShowcaseSection extends StatelessWidget {
-  const ShowcaseSection({
-    super.key,
-    required this.title,
-    required this.children,
-  });
-
-  final String title;
-  final List<Widget> children;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 40),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Section title
-          Text(
-            title,
-            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
           ),
-          const SizedBox(height: 16),
-          // Section content with spacing between items
-          Column(
-            children: [
-              for (int i = 0; i < children.length; i++) ...[
-                children[i],
-                if (i < children.length - 1) const SizedBox(height: 12),
-              ],
-            ],
-          ),
+
+          AppSpacerFactory.hugeVertical(),
         ],
       ),
+    ),
     );
   }
-}
 
-/// ShowcaseRow
-/// 
-/// A reusable widget for displaying individual showcase items with consistent
-/// label-widget layout. Used within ShowcaseSection for design system documentation.
-class ShowcaseRow extends StatelessWidget {
-  const ShowcaseRow({
-    super.key,
-    required this.label,
-    required this.child,
-  });
-
-  final String label;
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SizedBox(
-          width: 100,
-          child: Text(label),
-        ),
-        child,
-      ],
+  /// Builds a showcase item with label and content using design system components
+  Widget _buildShowcaseItem(String label, Widget content) {
+    return AppListItem(
+      title: label,
+      trailing: SizedBox(
+        width: 200,
+        child: content,
+      ),
     );
   }
 }
