@@ -14,7 +14,7 @@ import 'package:flutter/material.dart';
 /// ```
 class AppSemanticIcons {
   // Prevent instantiation
-  const AppSemanticIcons._();
+  AppSemanticIcons._();
 
   // Search related icons
   static const IconData search = Icons.search;
@@ -34,7 +34,7 @@ class AppSemanticIcons {
   // Content states
   static const IconData error = Icons.error_outline;
   static const IconData info = Icons.info_outline;
-  static const IconData warning = Icons.warning_outline;
+  static const IconData warning = Icons.warning_outlined;
   static const IconData success = Icons.check_circle_outline;
 
   // General actions

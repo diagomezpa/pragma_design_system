@@ -82,13 +82,13 @@ class AtomsListPage extends StatelessWidget {
         icon: Icons.image,
         page: const AppImageShowcase(),
       ),
+      ShowcaseListItem(
+        title: 'App Text',
+        description: 'Text components with consistent typography and styling',
+        icon: Icons.text_fields,
+        page: const AppTextShowcase(),
+      ),
       // Future atoms will be added here:
-      // ShowcaseListItem(
-      //   title: 'App Text',
-      //   description: 'Text components with consistent typography and styling',
-      //   icon: Icons.text_fields,
-      //   page: const AppTextShowcase(),
-      // ),
       // ShowcaseListItem(
       //   title: 'App Icon',
       //   description: 'Icon components for visual communication and navigation',
