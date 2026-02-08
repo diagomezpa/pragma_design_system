@@ -41,6 +41,8 @@ export 'molecules/list_item/app_list_item.dart';
 export 'molecules/app_card/app_card.dart';
 export 'molecules/app_empty_state/app_empty_state.dart';
 export 'molecules/app_price/app_price.dart';
+export 'molecules/app_icon_group/app_icon_group.dart';
+export 'molecules/app_labeled_card/app_labeled_card.dart';
 
 // Export organisms (when implemented)
 // export 'organisms/organisms.dart';

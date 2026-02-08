@@ -70,6 +70,12 @@ class AtomsListPage extends StatelessWidget {
         icon: Icons.horizontal_rule,
         page: const AppDividerShowcase(),
       ),
+      ShowcaseListItem(
+        title: 'App Icon',
+        description: 'Icon components for visual communication and navigation',
+        icon: Icons.star,
+        page: const AppIconShowcase(),
+      ),
       // Future atoms will be added here:
       // ShowcaseListItem(
       //   title: 'App Text',
