@@ -76,6 +76,12 @@ class AtomsListPage extends StatelessWidget {
         icon: Icons.star,
         page: const AppIconShowcase(),
       ),
+      ShowcaseListItem(
+        title: 'App Image',
+        description: 'Image components with loading states and error handling',
+        icon: Icons.image,
+        page: const AppImageShowcase(),
+      ),
       // Future atoms will be added here:
       // ShowcaseListItem(
       //   title: 'App Text',
