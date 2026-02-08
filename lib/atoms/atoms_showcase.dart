@@ -8,6 +8,4 @@ export 'app_divider/app_divider_showcase.dart' hide ShowcaseSection, ShowcaseRow
 export 'app_icon/app_icon_showcase.dart';
 export 'app_image/app_image_showcase.dart';
 export 'app_text/app_text_showcase.dart';
-
-// Future atom showcases will be exported here:
-// export 'app_spacer/app_spacer_showcase.dart';
+export 'app_spacer/app_spacer_showcase.dart';

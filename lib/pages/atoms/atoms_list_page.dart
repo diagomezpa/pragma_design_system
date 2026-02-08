@@ -88,6 +88,12 @@ class AtomsListPage extends StatelessWidget {
         icon: Icons.text_fields,
         page: const AppTextShowcase(),
       ),
+      ShowcaseListItem(
+        title: 'App Spacer',
+        description: 'Spacing components for consistent layout and rhythm',
+        icon: Icons.space_bar,
+        page: const AppSpacerShowcase(),
+      ),
       // Future atoms will be added here:
       // ShowcaseListItem(
       //   title: 'App Icon',
