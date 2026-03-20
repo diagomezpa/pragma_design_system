@@ -100,9 +100,34 @@ Para documentación detallada del sistema de diseño, arquitectura y componentes
 - **[Templates](/documentation/templates.md)** - Estructuras de layout sin estado
 - **[Pages](/documentation/pages.md)** - Implementaciones completas con lógica de negocio
 
+## ✨ Cambios Recientes
+
+### Reorganización del Paquete (v2.0)
+Hemos reestructurado completamente el paquete basándose en feedback dado por el instructor para mejorar la organización y claridad:
+
+**📁 Nueva Estructura:**
+- **`lib/`** - Solo componentes de producción exportados vía barrel files
+- **`example/lib/showcases/`** - Toda la documentación interactiva y demos organizados por categoría
+
+**🔧 Mejoras Implementadas:**
+- **Barrel Files**: Importaciones simplificadas con `pragma_design_system/atoms.dart`, `molecules.dart`, etc.
+- **Separación Clara**: Componentes de producción completamente separados de ejemplos y showcases
+- **Showcases Organizados**: Estructura jerárquica que refleja el atomic design en `/showcases/`
+- **API Limpia**: Solo componentes listos para producción se exportan desde el paquete principal
+
+```dart
+// Antes: imports mezclados
+import 'package:pragma_design_system/pragma_design_system.dart';
+
+// Ahora: imports organizados por categoría
+import 'package:pragma_design_system/atoms.dart';
+import 'package:pragma_design_system/molecules.dart';
+import 'package:pragma_design_system/organisms.dart';
+```
+
 ## Aplicación de Ejemplo
 
-La aplicación example sirve como **documentación viva e interactiva** del sistema de diseño:
+La aplicación example sirve como **documentación viva e interactiva** del sistema de diseño, ahora completamente reorganizada:
 
 ```bash
 cd example
@@ -110,7 +135,18 @@ flutter pub get
 flutter run
 ```
 
-**Cada componente, desde átomos hasta páginas, cuenta con su propio showcase interactivo** que permite explorar:
+**🎯 Nueva Estructura de Showcases:**
+```
+example/lib/showcases/
+├── atoms/          # Componentes básicos
+├── molecules/      # Componentes funcionales
+├── organisms/      # Secciones complejas
+├── templates/      # Estructuras de layout
+├── pages/          # Implementaciones completas
+└── feedback/       # Componentes de retroalimentación
+```
+
+**📱 Cada showcase incluye:**
 - Demos en vivo de todos los componentes
 - Ejemplos de uso y patrones de composición
 - Estados de interacción y variantes visuales
@@ -141,12 +177,18 @@ flutter run
 
 ### Explorando el Sistema
 
-1. **Comienza con HomePage**: Navega a través de categorías de componentes
-2. **Revisa Átomos**: Entiende los bloques de construcción fundacionales
-3. **Explora Moléculas**: Ve patrones de componentes funcionales
-4. **Estudia Organismos**: Observa composición de componentes complejos
-5. **Examina Templates**: Entiende arquitectura de layout
-6. **Prueba Pages**: Experimenta implementaciones completas
+1. **🏠 HomePage**: Navega a través de categorías organizadas de componentes
+2. **⚛️ Átomos**: Entiende los bloques de construcción fundacionales (`/showcases/atoms/`)
+3. **🧬 Moléculas**: Ve patrones de componentes funcionales (`/showcases/molecules/`)
+4. **🦠 Organismos**: Observa composición de componentes complejos (`/showcases/organisms/`)
+5. **📐 Templates**: Entiende arquitectura de layout (`/showcases/templates/`)
+6. **📄 Pages**: Experimenta implementaciones completas (`/showcases/pages/`)
+7. **💬 Feedback**: Explora componentes de retroalimentación (`/showcases/feedback/`)
+
+**🔍 Navegación Mejorada:**
+- Cada categoría tiene su propio showcase organizado
+- Barrel files permiten importaciones selectivas
+- Estructura clara que refleja atomic design methodology
 
 La app example demuestra todo el sistema de diseño en acción y sirve como referencia primaria para patrones de implementación.
 
