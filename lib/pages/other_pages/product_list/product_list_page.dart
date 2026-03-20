@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pragma_design_system/pragma_design_system.dart';
-import 'package:pragma_design_system/templates/product_list/product_list_template_showcase.dart';
+
 
 /// ProductListPage - A concrete Page implementation demonstrating template usage.
 ///
