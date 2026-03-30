@@ -126,13 +126,20 @@ class AppCardList extends StatelessWidget {
 
   /// Builds a scrollable ListView.separated for the cards
   Widget _buildScrollableList(Widget effectiveSeparator) {
-    return ListView.separated(
+    final listView = ListView.separated(
       shrinkWrap: shrinkWrap,
       physics: scrollPhysics,
       itemCount: children.length,
       separatorBuilder: (context, index) => effectiveSeparator,
       itemBuilder: (context, index) => children[index],
     );
+
+    // When shrinkWrap is false, wrap with Expanded to provide height constraints
+    if (shrinkWrap) {
+      return listView;
+    } else {
+      return Expanded(child: listView);
+    }
   }
 
   /// Builds a static Column for the cards when scrolling is disabled

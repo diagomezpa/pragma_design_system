@@ -14,6 +14,7 @@ export 'atoms.dart';
 export 'molecules.dart';
 export 'organisms.dart';
 export 'templates.dart';
+export 'feedback.dart';
 
 // Export themes
 export 'theme/app_colors.dart';
