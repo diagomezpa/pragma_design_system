@@ -558,7 +558,7 @@ void main() {
           MaterialApp(
             home: Scaffold(
               body: AppEmptyStateSection(
-                title: 'Custom Action',
+                title: 'Custom Action Test',
                 primaryAction: customAction,
               ),
             ),
@@ -566,6 +566,7 @@ void main() {
         );
 
         expect(find.text('Custom Action'), findsOneWidget);
+        expect(find.text('Custom Action Test'), findsOneWidget);
         expect(find.byType(Container), findsAtLeastNWidgets(1));
       });
 
@@ -627,10 +628,13 @@ void main() {
           ),
         );
 
-        expect(find.byType(ConstrainedBox), findsOneWidget);
+        expect(find.byType(ConstrainedBox), findsWidgets);
         
-        final constrainedBox = tester.widget<ConstrainedBox>(find.byType(ConstrainedBox));
-        expect(constrainedBox.constraints.maxWidth, isNotNull);
+        final constrainedBoxes = tester.widgetList<ConstrainedBox>(find.byType(ConstrainedBox));
+        final contentConstrainedBox = constrainedBoxes.firstWhere((box) => 
+          box.constraints.maxWidth != double.infinity && box.constraints.maxWidth > 0
+        );
+        expect(contentConstrainedBox.constraints.maxWidth, isNotNull);
       });
 
       testWidgets('should use LayoutBuilder for responsive behavior', (tester) async {
